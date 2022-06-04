@@ -18055,7 +18055,7 @@ textarea.form-control-lg {
 /* Declare heights because of positioning of img element */
 .carousel-item 
 {
-	height: 24rem;
+	height: 22rem;
 }
 
 /* RESPONSIVE CSS
