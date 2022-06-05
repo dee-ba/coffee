@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+<<<<<<< HEAD
+use App\Http\Controllers\UserController;
+=======
 use App\Http\Controllers\ProductController;
+>>>>>>> Michel
 
 /*
 |--------------------------------------------------------------------------
@@ -19,16 +23,10 @@ Route::get('/', function () {
 });
 
 
+Route::get('/users' , [UserController::class, 'index']);
+
 Route::get('/hot_products', [ProductController::class, 'hot_index']);
 Route::get('/cold_products', [ProductController::class, 'cold_index']);
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
