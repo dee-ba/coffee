@@ -31,8 +31,6 @@ Route::post("/users", [UserController::class,'store']);
 
 
 
-
-
 Route::get('/hot_products', [ProductController::class, 'hot_index']);
 Route::get('/cold_products', [ProductController::class, 'cold_index']);
 

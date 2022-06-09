@@ -14,7 +14,7 @@
 
 <body>
     
-    <h1 class="text-primary" style="margin: 40px; text-align: center;">Register New Member</h1>
+    <h1 class="text-primary" style="margin: 40px; text-align: center;">Create New Member</h1>
 
  
     <div style="text-align: center";>

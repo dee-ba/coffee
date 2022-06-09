@@ -55,7 +55,7 @@ class UserController extends Controller
    
         $user->save();
    
-        return redirect('users/index');
+        return redirect('/users');
 
     }
 
