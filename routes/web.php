@@ -21,6 +21,17 @@ Route::get('/', function () {
 
 
 Route::get('/users' , [UserController::class, 'index']);
+Route::get("edit/{id}", [UserController::class,'edit']);
+Route::post("/edit", [UserController::class,'update']);
+Route::get("delete/{id}", [UserController::class,'delete']);
+Route::get("users/create", [UserController::class,'create']);
+Route::post("/users", [UserController::class,'store']);
+
+
+
+
+
+
 
 Route::get('/hot_products', [ProductController::class, 'hot_index']);
 Route::get('/cold_products', [ProductController::class, 'cold_index']);

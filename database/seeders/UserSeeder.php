@@ -30,7 +30,7 @@ class UserSeeder extends Seeder
         'first_name' => $faker ->firstName(),
         'last_name' => $faker ->lastName(),
         'street_name' => $faker ->streetName(),
-        'city' => $faker ->lastName(),
+        'city' => $faker ->city(),
         'postal_code' => Str::random(4),
         'phone' => $faker -> phoneNumber,
         'date_of_birth' => $faker -> dateTimeBetween('-30 years' , 'now'),
