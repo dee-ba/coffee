@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Product;
 use Illuminate\Http\Request;
 
-class ProductsController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,17 +13,20 @@ class ProductsController extends Controller
      */
     public function index()
     {
-		return view('/index');
+		$data['product'] = Product::orderBy('id','asc')->paginate(5);	
+		return view('products/index', $data);
     }
     
 	public function hot_index()
     {
-		return view('products/hot_products');
+		$data['product'] = Product::where('category','hot')->orderBy('id','asc')->paginate(5);
+		return view('products/hot_products', $data);
     }
 	
     public function cold_index()
     {
-		return view('products/cold_products');
+		$data['product'] = Product::where('category','cold')->orderBy('id','asc')->paginate(5);
+		return view('products/cold_products', $data);
     }	
 
     /**
@@ -33,7 +36,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-
+        return view('products/create');
     }
 
     /**
@@ -44,7 +47,25 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-
+		$request->validate([
+		'name' => 'required',
+		'description' => 'required',
+		'image' => 'required',
+		'price' => 'required',
+		'category' => 'required',
+		'stock' => 'required'
+		]);
+		
+		$prod = new Product;
+		$prod->name = $request->name;
+		$prod->description = $request->description;
+		$prod->image = $request->image;
+		$prod->price = $request->price;		
+		$prod->category = $request->category;
+		$prod->stock = $request->stock;
+		$prod->save();
+		return redirect('products')
+		->with('success','Product has been created successfully.');	
     }
 
     /**
@@ -53,9 +74,9 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show(Product $prod)
     {
-        return view('person/show',compact('per'));
+        return view('products/show',compact('prod'));
     }
 
     /**
@@ -64,9 +85,9 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request)
+    public function edit(Product $prod)
     {
-
+		return view('products/edit',compact('prod'));
     }
 
     /**
@@ -78,7 +99,24 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+		$request->validate([
+		'name' => 'required',
+		'description' => 'required',
+		'image' => 'required',
+		'price' => 'required',
+		'category' => 'required',
+		'stock' => 'required'
+		]);
+		$prod = Product::find($id);
+		$prod->name = $request->name;
+		$prod->description = $request->description;
+		$prod->image = $request->image;
+		$prod->price = $request->price;		
+		$prod->category = $request->category;
+		$prod->stock = $request->stock;		
+		$prod->save();
+		return redirect('products')
+		->with('success','Person Has Been updated successfully');	
     }
 
     /**
@@ -87,8 +125,10 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy(Product $prod)
     {
-  
+		$prod->delete();
+		return redirect('products')
+		->with('success','Product has been deleted successfully');        
     }
 }

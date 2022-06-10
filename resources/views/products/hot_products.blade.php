@@ -21,17 +21,32 @@
 
 			<table class="table table-bordered">
 				<tr>
-					<th>Firstname</th>
-					<th>Lastname</th>
-					<th>Address</th>
-					<th>Phonenumber</th>
-					<th>Email</th>
-					<th>Date of birth</th>
-					<th>Nationality</th>
-					<th>Linkedin</th>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Image</th>
+					<th>Price</th>
+					<th>Category</th>
+					<th>Stock</th>
+					<th>Created_at</th>
+					<th>Updated_at</th>
 					<th width="280px">Action</th>
 				</tr>
 
+				@foreach ($product as $prod)
+					<tr>						
+						<td>{{ $prod->id }}</td>
+						<td>{{ $prod->name }}</td>
+						<td>{{ $prod->description }}</td>
+						<td>{{ $prod->image }}</td>
+						<td>{{ $prod->price }}</td>
+						<td>{{ $prod->category }}</td>
+						<td>{{ $prod->stock }}</td>
+						<td>{{ $prod->created_at }}</td>
+						<td>{{ $prod->updated_at }}</td>
+						
+					</tr>
+				@endforeach
 			</table>
 		</div>
 		@endsection		

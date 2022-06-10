@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\Order_ItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,11 +21,34 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+//User Routes
 Route::get('/users' , [UserController::class, 'index']);
 
+//Product Routes
+Route::get('/products', [ProductController::class, 'index']);
 Route::get('/hot_products', [ProductController::class, 'hot_index']);
 Route::get('/cold_products', [ProductController::class, 'cold_index']);
+Route::get('/products/create', [ProductController::class, 'create']);
+Route::get('/products/{prod}/edit', [ProductController::class, 'edit']);
+Route::match(['put','patch'], '/products/{prod}/edit', [ProductController::class, 'update']);
+Route::post('/products', [ProductController::class, 'store']);
+Route::delete('/products/{prod}', [ProductController::class, 'destroy']);
+
+//Order Routes
+Route::get('/orders', [OrderController::class, 'index']);
+Route::get('/orders/create', [OrderController::class, 'create']);
+Route::get('/orders/{ord}/edit', [OrderController::class, 'edit']);
+Route::match(['put','patch'], '/orders/{ord}/edit', [OrderController::class, 'update']);
+Route::post('/orders', [OrderController::class, 'store']);
+Route::delete('/orders/{ord}', [OrderController::class, 'destroy']);
+
+//Order_Item Routes
+Route::get('/order_items', [Order_ItemController::class, 'index']);
+Route::get('/order_items/create', [Order_ItemController::class, 'create']);
+Route::get('/order_items/{ord_item}/edit', [Order_ItemController::class, 'edit']);
+Route::match(['put','patch'], '/order_items/{ord_item}/edit', [Order_ItemController::class, 'update']);
+Route::post('/order_items', [Order_ItemController::class, 'store']);
+Route::delete('/order_items/{ord_item}', [Order_ItemController::class, 'destroy']);
 
 Auth::routes();
 

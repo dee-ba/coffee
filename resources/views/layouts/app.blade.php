@@ -44,6 +44,7 @@
 									Test Pages
 								</a>
 									<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+										<a class="dropdown-item" href="{{ url('/products') }}">Products</a>
 										<a class="dropdown-item" href="{{ url('/users') }}">Users</a>		
 										<a class="dropdown-item" href="{{ url('/orders') }}">Orders</a>		
 										<a class="dropdown-item" href="{{ url('/order_items') }}">Order_Items</a>	
@@ -52,18 +53,13 @@
 							</ul>
 						</div>						
 		
-						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-							<span class="navbar-toggler-icon"></span>
-						</button>
+						<!-- Left Side Of Navbar -->
+						<ul class="navbar-nav me-auto">
 
-						<div class="collapse navbar-collapse" id="navbarSupportedContent">
-							<!-- Left Side Of Navbar -->
-							<ul class="navbar-nav me-auto">
+						</ul>
 
-							</ul>
-
-							<!-- Right Side Of Navbar -->
-							<ul class="navbar-nav ms-auto">
+						<!-- Right Side Of Navbar -->
+						<ul class="navbar-nav ms-auto">
 							<div class="input-group rounded">
 								<input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
 								<span class="input-group-text border-0" id="search-addon">
@@ -102,8 +98,7 @@
 										</div>
 									</li>
 								@endguest
-							</ul>
-						</div>
+						</ul>
 					</div>
 				</div>
 			</nav>
