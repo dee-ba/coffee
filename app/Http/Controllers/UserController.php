@@ -16,7 +16,11 @@ class UserController extends Controller
     public function index()
     {
       
-        return view('users/index');
+        $users = User::paginate(15);
+        // $users = User::all();       without pages
+        return view('users/index', ['users' => $users]);
+   
+
     }
 
     /**
@@ -26,7 +30,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('users/create');
     }
 
     /**
@@ -37,7 +41,22 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new User;
+        $user->first_name = $request->first_name; 
+        $user->last_name = $request->last_name; 
+        $user->street_name = $request->street_name;
+        $user->city = $request->city;
+        $user->postal_code = $request->postal_code;
+        $user->phone = $request->phone;
+        $user->date_of_birth = $request->date_of_birth;
+        $user->email = $request->email;
+        $user->password = $request->password;
+       
+   
+        $user->save();
+   
+        return redirect('/users');
+
     }
 
     /**
@@ -59,7 +78,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user= User::find($id);
+        return view ('users/edit', ['user'=>$user]); 
+       
     }
 
     /**
@@ -69,10 +90,24 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
-    }
+        $user = User::find($request->id);
+        $user->first_name = $request->first_name; 
+        $user->last_name = $request->last_name; 
+        $user->street_name = $request->street_name;
+        $user->city = $request->city;
+        $user->postal_code = $request->postal_code;
+        $user->phone = $request->phone;
+        $user->date_of_birth = $request->date_of_birth;
+        $user->email = $request->email;
+        $user->save();
+   
+        return redirect('/users');
+  
+       
+}
+
 
     /**
      * Remove the specified resource from storage.
@@ -80,8 +115,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($id)
     {
-        //
+        $user=User::find($id);
+        $user->delete();
+        return redirect('/users');    
     }
 }

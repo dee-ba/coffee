@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('street_name');
-            $table->string('city');
             $table->string('postal_code');
+            $table->string('city');
             $table->string('phone');
             $table->date('date_of_birth');
             $table->string('email')->unique();
@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
         });
     }
 
