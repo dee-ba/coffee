@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\Order_ItemController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -62,3 +63,4 @@ Route::delete('/order_items/{ord_item}', [Order_ItemController::class, 'destroy'
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

@@ -23,10 +23,10 @@
             
             <form action="/users" method = "POST"> 
                 @csrf
-               
+               <strong>First Name</strong>
                 <input type="text" name="first_name" placeholder="first name"/>
                 <br><br>
-                <input type="text" name="last_name" placeholder="last name"/>
+                <strong>Last Name</strong><input type="text" name="last_name" placeholder="last name"/>
                 <br><br>
                 <input type="text" name="street_name" placeholder="street_name"/>
                 <br><br>

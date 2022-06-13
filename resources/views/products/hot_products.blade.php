@@ -25,6 +25,7 @@
 					<th>Name</th>
 					<th>Description</th>
 					<th>Image</th>
+					<th>Image</th>
 					<th>Price</th>
 					<th>Category</th>
 					<th>Stock</th>
@@ -39,6 +40,7 @@
 						<td>{{ $prod->name }}</td>
 						<td>{{ $prod->description }}</td>
 						<td>{{ $prod->image }}</td>
+						<td><img src="{{ $prod->image }}"></td>  
 						<td>{{ $prod->price }}</td>
 						<td>{{ $prod->category }}</td>
 						<td>{{ $prod->stock }}</td>
