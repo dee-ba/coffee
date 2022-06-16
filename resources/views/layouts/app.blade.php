@@ -67,50 +67,51 @@
 								<span class="input-group-text border-0" id="search-addon">
 									<li><a href=""><i class="bi bi-search"></i></a></li>
 								</span>
-							</div>						
-								<!-- Authentication Links -->
-								@guest
-									@if (Route::has('login'))
-										<li class="nav-item">
-											<a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-										</li>
-									@endif
+							</div>	
 
-									@if (Route::has('register'))
-										<li class="nav-item">
-											<a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-										</li>
-									@endif
-								@else
-									<li class="nav-item dropdown">
-										<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-											<i class="bi bi-basket"></i>
-											<i class="text-warning"> ({{ Cart::getTotalQuantity()}}) </i> Shopping Cart
-										</a>
-										
-										<div class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">									
-											<a class="dropdown-item" href="/cart"> View Cart ({{ Cart::getTotalQuantity()}})</a>
-										</div>										
-									</li>
+							<li class="nav-item dropdown">
+								<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+									<i class="bi bi-basket"></i>
+									<i class="text-warning"> ({{ Cart::getTotalQuantity()}}) </i> Shopping Cart
+								</a>
+								
+								<div class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">									
+									<a class="dropdown-item" href="/cart"> View Cart ({{ Cart::getTotalQuantity()}})</a>
+								</div>										
+							</li>
 									
-									<li class="nav-item dropdown">
-										<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-											<i class="bi bi-person-circle"></i> {{ Auth::user()->name }}
+							<!-- Authentication Links -->
+							@guest
+								@if (Route::has('login'))
+									<li class="nav-item">
+										<a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+									</li>
+								@endif
+
+								@if (Route::has('register'))
+									<li class="nav-item">
+										<a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+									</li>
+								@endif
+							@else
+								<li class="nav-item dropdown">
+									<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+										<i class="bi bi-person-circle"></i> {{ Auth::user()->name }}
+									</a>
+
+									<div class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">									
+										<a class="dropdown-item" href="{{ route('logout') }}"
+										   onclick="event.preventDefault();
+														 document.getElementById('logout-form').submit();">
+											{{ __('Logout') }}
 										</a>
 
-										<div class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">									
-											<a class="dropdown-item" href="{{ route('logout') }}"
-											   onclick="event.preventDefault();
-															 document.getElementById('logout-form').submit();">
-												{{ __('Logout') }}
-											</a>
-
-											<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-												@csrf
-											</form>
-										</div>
-									</li>
-								@endguest
+										<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+											@csrf
+										</form>
+									</div>
+								</li>
+							@endguest
 						</ul>
 					</div>
 				</div>
