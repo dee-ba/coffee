@@ -10,6 +10,35 @@
 	</head>
 	<body>
 		@section('content')
+
+        <form action="/products/autocomplete" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <input name="search" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                        @error('search')
+                        <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-search"></i>
+                  </button>
+            </div>
+        </form>
+
+
+
+
+
+
+
+
+
+
+
 		<div class="container mt-2">
 			<div class="row">
 				<div class="col-lg-12 margin-tb">
@@ -24,15 +53,15 @@
 
 			<table class="table table-bordered">
 				<tr>
-					<th>id</th>
-					<th>name</th>
-					<th>description</th>
-					<th>image</th>
-					<th>price</th>
-					<th>category</th>
-					<th>stock</th>
-					<th>created_at</th>
-					<th>updated_at</th>
+					<th>ID</th>
+					<th>Name</th>
+					<th width="380px">Description</th>
+					<th>Image</th>
+					<th>Price</th>
+					<th>Category</th>
+					<th>Stock</th>
+					<th>Created_at</th>
+					<th>Updated_at</th>
 					<th width="280px">Action</th>
 				</tr>
 
@@ -41,7 +70,8 @@
 						<td>{{ $prod->id }}</td>
 						<td>{{ $prod->name }}</td>
 						<td>{{ $prod->description }}</td>
-						<td>{{ $prod->image }}</td>
+						
+						<td> <img src="{{ $prod->image }}"></td>
 						<td>{{ $prod->price }}</td>
 						<td>{{ $prod->category }}</td>
 						<td>{{ $prod->stock }}</td>

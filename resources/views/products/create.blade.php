@@ -14,7 +14,7 @@
 			<div class="row">
 				<div class="col-lg-12 margin-tb">
 					<div class="pull-left mb-2">
-						<h2>Add Product</h2>
+						<h2>Add Product</h2>  <i class="bi bi-apple"></i>
 					</div>
 					<div class="pull-right">
 						<a class="btn btn-primary" href="/products"> Back</a>
@@ -68,7 +68,13 @@
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
 						<strong>Category:</strong>
-						<input type="text" name="category" class="form-control" placeholder="category">
+				
+						<select name="category" id="category">
+							<option value="none" selected disabled hidden>Select an Option</option>
+							<option value="cold">Cold</option>
+							<option value="hot">Hot</option>
+						</select>
+
 						@error('category')
 						<div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
 						@enderror

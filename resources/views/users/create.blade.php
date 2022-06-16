@@ -28,18 +28,25 @@
                 <br><br>
                 <strong>Last Name</strong><input type="text" name="last_name" placeholder="last name"/>
                 <br><br>
+                <strong>Street Name</strong>
                 <input type="text" name="street_name" placeholder="street_name"/>
                 <br><br>
+                <strong>City</strong>
                 <input type="text" name="city" placeholder="city"/>
                 <br><br>
+                <strong>Postcode</strong>
                 <input type="text" name="postal_code" placeholder="postal_code"/>
                 <br><br>
+                <strong>Phone</strong>
                 <input type="text" name="phone" placeholder="phone"/>
                 <br><br>
+                <strong>Date of Birth</strong>
                 <input type="text" name="date_of_birth" placeholder="date_of_birth"/>
                 <br><br>
+                <strong>Email</strong>
                 <input type="text" name="email" placeholder="email"/>
                 <br><br>
+                <strong>Password</strong>
                 <input type="text" name="password" placeholder="password"/>
                 <br><br>
                 

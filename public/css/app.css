@@ -18079,3 +18079,7 @@ textarea.form-control-lg {
     height: 35vw;
     object-fit: cover;
 }
+
+img {
+  width: 200px;
+}
