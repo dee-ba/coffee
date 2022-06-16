@@ -19,6 +19,7 @@ class CartController extends Controller
         \Cart::add([
             'id' => $request->id,
             'name' => $request->name,
+			'description' => $request->description,
             'price' => $request->price,
             'quantity' => $request->quantity,
             'attributes' => array(
@@ -32,19 +33,24 @@ class CartController extends Controller
 
     public function updateCart(Request $request)
     {
-        \Cart::update(
-            $request->id,
-            [
-                'quantity' => [
-                    'relative' => false,
-                    'value' => $request->quantity
-                ],
-            ]
-        );
-
-        session()->flash('success', 'Item Cart is Updated Successfully !');
-
-        return redirect()->route('cart.list');
+		if($request->quantity == 0)
+		{
+			
+		}
+		else
+		{
+			\Cart::update(
+				$request->id,
+				[
+					'quantity' => [
+						'relative' => false,
+						'value' => $request->quantity
+					],
+				]
+			);
+			session()->flash('success', 'Item Cart is Updated Successfully !');
+			return redirect()->route('cart.list');
+		}
     }
 
     public function removeCart(Request $request)

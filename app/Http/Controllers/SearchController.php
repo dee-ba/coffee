@@ -21,10 +21,8 @@ class SearchController extends Controller
         //             ->where('name', 'LIKE', '%'. $request->get('query'). '%')
         //             ->get();
         // $data['product'] = Product::where('category','cold')->orderBy('id','asc')->paginate(5);
-        // $data['product'] = Product::where('name', 'LIKE', '%c%')->orderBy('id','asc')->paginate(5);
-        // return view('/products/autocomplete',$data);
-
-        
+        $data['product'] = Product::where('name', 'LIKE', '%c%')->orderBy('id','asc')->paginate(5);
+        return view('/products/autocomplete',$data);
     }
 }
 
