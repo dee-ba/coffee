@@ -27,12 +27,14 @@ class ProductSeeder extends Seeder
     {
         $faker = Faker::create();
         DB::table('products')->insert([
-            'name' => 'Cappaccino',
+            'name' => 'Iced Latte',
             'description' => 'Blended with milk and ice, layered on top of whipped cream.',
-            'image' => 'https://images.unsplash.com/photo-1541167760496-1628856ab772?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1937&q=80 width="50px"',
-            'price' => 3.99,
+            'image' => 'https://images.unsplash.com/photo-1524095731963-b4e38d1b3329?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
+            'price' => 4.99,
             'category' => "cold",
-            'stock' => random_int(50,100)
+            'stock' => random_int(50,100),
+            'created_at' => date('y-m-d h:m:s'),	
+		'updated_at' => date('y-m-d h:m:s')	
         ]);
 
     }

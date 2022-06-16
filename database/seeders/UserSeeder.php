@@ -33,11 +33,12 @@ class UserSeeder extends Seeder
         'postal_code' => Str::random(4),
         'city' => $faker ->city(),
         'phone' => $faker -> phoneNumber,
-        'date_of_birth' => $faker -> dateTimeBetween('-30 years' , 'now'),
+        'date_of_birth' => $faker -> dateTimeBetween('-100 years' , 'now'),
         'email' => $faker -> email(),
         'email_verified_at' => $faker -> date(),
-        'password' => $faker -> password()
-    
+        'password' => $faker -> password(),
+        'created_at' => date('y-m-d h:m:s'),	
+		'updated_at' => date('y-m-d h:m:s')	   
         ]);
     }
 }

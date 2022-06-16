@@ -41,8 +41,7 @@
 						<td>{{ $prod->id }}</td>
 						<td>{{ $prod->name }}</td>
 						<td>{{ $prod->description }}</td>
-						
-						<td> <img src="{{ $prod->image }}"></td>
+						<td> <img class="card-img" src="{{ $prod->image }}"></td>
 						<td>{{ $prod->price }}</td>
 						<td>{{ $prod->category }}</td>
 						<td>{{ $prod->stock }}</td>

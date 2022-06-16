@@ -22,8 +22,8 @@
 
 
       
-<table class="table">
-  <thead>
+<table class="table table-responsive-sm">
+  <thead class="thead-dark">
     <tr>
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
@@ -33,6 +33,10 @@
       <th scope="col">Phone</th>
       <th scope="col">Date of Birth</th>
       <th scope="col">Email</th>
+      <th scope="col">Created At</th>
+      <th scope="col">Updated At</th>
+      <th scope="col">Action</th>
+
     </tr>
   
   @foreach($users as $user)
@@ -45,17 +49,13 @@
     <td>{{$user->phone}}</td>
     <td>{{$user->date_of_birth}}</td>
     <td>{{$user->email}}</td>
-
-
+    <td>{{$user->created_at}}</td>
+    <td>{{$user->updated_at}}</td>
+    
     <td> 
         <a href="{{'edit/' .$user['id'] }}" class="btn btn-primary btn-sm" >Edit</a>
-    </td> 
-    <td>
         <a href="{{'delete/' .$user['id'] }}" class="btn btn-danger btn-sm" >Delete</a>
-    </td>
-
-
-
+    </td> 
    
 
   </thead>

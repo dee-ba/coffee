@@ -25,10 +25,12 @@ class UserFactory extends Factory
         'postal_code' => Str::random(4),
         'city' => $this->faker ->city(),
         'phone' => $this->faker -> phoneNumber,
-        'date_of_birth' => $this->faker -> dateTimeBetween('-30 years' , 'now'),
+        'date_of_birth' => $this->faker -> dateTimeBetween('-100 years' , 'now'),
         'email' => $this->faker->unique()->safeEmail(),
         'email_verified_at' => now(),
-        'password' => $this->faker -> password()
+        'password' => $this->faker -> password(),
+        'created_at' => date('y-m-d h:m:s'),	
+		'updated_at' => date('y-m-d h:m:s'),
 
 
             // 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
