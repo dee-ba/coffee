@@ -19,7 +19,7 @@
 		<div id="app">
 			<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark navbar-light bg-light">
 				<div class="container">
-					<a class="navbar-brand" href="{{ url('/') }}">Home</a>
+					<a class="navbar-brand" href="{{ url('/') }}"><i class="bi bi-house-door"></i> Home</a>
 					
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
@@ -28,7 +28,7 @@
 						<ul class="navbar-nav">
 							<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Categories
+								<i class="bi bi-cup-straw"></i> Categories
 							</a>
 								<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
 							<a class="dropdown-item" href="{{ url('/hot_products') }}">Hot Beverages</a>
@@ -41,13 +41,14 @@
 							<ul class="navbar-nav">
 								<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-									Test Pages
+									<i class="bi bi-wrench-adjustable-circle"></i> Test Pages
 								</a>
 									<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
 										<a class="dropdown-item" href="{{ url('/products') }}">Products</a>
+										<a class="dropdown-item" href="{{ url('/customize') }}">Customize Product</a>	
 										<a class="dropdown-item" href="{{ url('/users') }}">Users</a>		
 										<a class="dropdown-item" href="{{ url('/orders') }}">Orders</a>		
-										<a class="dropdown-item" href="{{ url('/order_items') }}">Order_Items</a>	
+										<a class="dropdown-item" href="{{ url('/order_items') }}">Order Items</a>	
 									</ul>
 								</li>
 							</ul>
@@ -83,10 +84,21 @@
 								@else
 									<li class="nav-item dropdown">
 										<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-											{{ Auth::user()->name }}
+											<i class="bi bi-basket"></i>
+											<i class="text-warning"> ({{ Cart::getTotalQuantity()}}) </i> Shopping Cart
+										</a>
+										
+										<div class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">									
+											<a class="dropdown-item" href="/cart"> View Cart ({{ Cart::getTotalQuantity()}})</a>
+										</div>										
+									</li>
+									
+									<li class="nav-item dropdown">
+										<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+											<i class="bi bi-person-circle"></i> {{ Auth::user()->name }}
 										</a>
 
-										<div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+										<div class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">									
 											<a class="dropdown-item" href="{{ route('logout') }}"
 											   onclick="event.preventDefault();
 															 document.getElementById('logout-form').submit();">
