@@ -66,19 +66,15 @@
 						@enderror
 					</div>
 				</div>				
-
-				<div class="form-group">
-					<strong>Category:</strong><br>
-					<select name="category" id="category">
-						<option value="{{ $prod->category }}">{{ $prod->category }}</option>
-						<option value="Hot">Hot</option>
-						<option value="Cold">Cold</option>						
-					</select>
-					@error('category')
-					<div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-					@enderror							
-				</div>	
-				
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<div class="form-group">
+						<strong>Category:</strong>
+						<input type="text" name="category" class="form-control" value="{{ $prod->category }}" placeholder="category">
+						@error('category')
+						<div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+						@enderror
+					</div>
+				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
 						<strong>Stock:</strong>

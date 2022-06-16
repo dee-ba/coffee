@@ -26,8 +26,8 @@
 				
 					<div class="container">
 						<div class="carousel-caption text-start">
-							<h1 id="stroked_text">Latte.</h1>
-							<p id="stroked_text">Try our new Latte, made the way it's meant to be.</p>
+							<h1>Latte.</h1>
+							<p>Try our new Latte, made the way it's meant to be.</p>
 							<p><a class="btn btn-lg btn-primary" href="{{ url('/hot_products') }}">Browse for more</a></p>
 						</div>
 					</div>
@@ -37,8 +37,8 @@
 
 					<div class="container">
 						<div class="carousel-caption">
-							<h1 id="stroked_text">Coffee ice Cream.</h1>
-							<p id="stroked_text">The perfect coffee, for those hot summer days.</p>
+							<h1>Coffee ice Cream.</h1>
+							<p>The perfect coffee, for those hot summer days.</p>
 							<p><a class="btn btn-lg btn-primary" href="{{ url('/cold_products') }}">Browse for more</a></p>
 						</div>
 					</div>
@@ -48,9 +48,9 @@
 
 					<div class="container">
 						<div class="carousel-caption text-end">
-							<h1 id="stroked_text">Iced Tea.</h1>
-							<p id="stroked_text">Try some iced tea like you never had before.</p>
-							<p><a class="btn btn-lg btn-primary" href="{{ url('/cold_products') }}">Browse for more</a></p>
+							<h1>Iced Tea.</h1>
+							<p>Try some iced tea like you never had before.</p>
+							<p><a class="btn btn-lg btn-primary" href="#">Browse for more</a></p>
 						</div>
 					</div>
 				</div>
@@ -64,12 +64,6 @@
 				<span class="visually-hidden">Next</span>
 			</button>
 		</div>
-		
-		<p id="stroked_text">This text is beautiful stroked</p>
-		<p id="stroked_text_thick">This text is beautiful stroked thick</p>
-		<p id="stroked_text_italic">This text is beautiful stroked and italic</p>			               
-
     </body>
-	
 </html>
 @endsection

@@ -19,7 +19,6 @@ class CartController extends Controller
         \Cart::add([
             'id' => $request->id,
             'name' => $request->name,
-			'description' => $request->description,
             'price' => $request->price,
             'quantity' => $request->quantity,
             'attributes' => array(
@@ -42,23 +41,6 @@ class CartController extends Controller
                 ],
             ]
         );
-
-		if($request->quantity == 0)
-		{
-			
-		}
-		else
-		{
-			\Cart::update(
-				$request->id,
-				[
-					'quantity' => [
-						'relative' => false,
-						'value' => $request->quantity
-					],
-				]
-			);
-		}
 
         session()->flash('success', 'Item Cart is Updated Successfully !');
 

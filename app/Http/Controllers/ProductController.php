@@ -1,11 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Product;
-
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -30,12 +27,6 @@ class ProductController extends Controller
     {
 		$data['product'] = Product::where('category','cold')->orderBy('id','asc')->paginate(5);
 		return view('products/cold_products', $data);
-    }
-
-    public function customize(Product $prod)
-    {
-		$products = DB::table('products')->get();
-		return view('products/customize',compact('prod', 'products'));		
     }	
 
     /**
@@ -45,8 +36,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-		$products = DB::table('products')->get();				
-        return view('products/create', compact('products'));
+        return view('products/create');
     }
 
     /**
@@ -97,8 +87,7 @@ class ProductController extends Controller
      */
     public function edit(Product $prod)
     {
-		$products = DB::table('products')->get();
-		return view('products/edit',compact('prod', 'products'));
+		return view('products/edit',compact('prod'));
     }
 
     /**

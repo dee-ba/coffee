@@ -5,7 +5,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>Cold Beverages</title>
+		<title>Cold Beverages Index</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
 	</head>
 	<body>
@@ -14,37 +14,42 @@
 			<div class="row">
 				<div class="col-lg-12 margin-tb">
 					<div class="pull-left">
-						<h2>Cold Beverages</h2>
+						<h2>Index Cold Beverages</h2>
 					</div>
 				</div>
 			</div>
 
-			<div class="row">
+			<table class="table table-bordered">
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Image</th>
+					<th>Image</th>
+					<th>Price</th>
+					<th>Category</th>
+					<th>Stock</th>
+					<th>Created_at</th>
+					<th>Updated_at</th>
+					<th width="280px">Action</th>
+				</tr>
+
 				@foreach ($product as $prod)
-				<div class="col-sm-6 mb-3">
-					<div class="card text-center">
-						<img class="card-img-top" src="{{ $prod->image }}" alt="Product Image">
-						<div class="card-body">
-							<h5 class="card-title">{{ $prod->name }}</h5>
-							<p class="card-text">{{ $prod->description }}</p>
-							
-							<form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
-								@csrf
-								<input type="hidden" value="{{ $prod->id }}" name="id">
-								<input type="hidden" value="{{ $prod->name }}" name="name">
-								<input type="hidden" value="{{ $prod->description }}" name="description">
-								<input type="hidden" value="{{ $prod->price }}" name="price">
-								<input type="hidden" value="{{ $prod->image }}"  name="image">
-								<input type="hidden" value="1" name="quantity">
-								<a href="customize/{{$prod->id}}" class="btn btn-primary">Customize</a>
-								<button class="px-4 py-2 text-white bg-success rounded">Add To Cart</button>
-							</form>
-							
-						</div>
-					</div>
-				</div>
+					<tr>						
+						<td>{{ $prod->id }}</td>
+						<td>{{ $prod->name }}</td>
+						<td>{{ $prod->description }}</td>
+						<td>{{ $prod->image }}</td>
+						<td><img src="{{ $prod->image }}"></td>    
+						<td>{{ $prod->price }}</td>
+						<td>{{ $prod->category }}</td>
+						<td>{{ $prod->stock }}</td>
+						<td>{{ $prod->created_at }}</td>
+						<td>{{ $prod->updated_at }}</td>
+						
+					</tr>
 				@endforeach
-			</div>	
+			</table>
 		</div>
 		@endsection		
 	</body>
