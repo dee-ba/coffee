@@ -7,7 +7,7 @@
 		<!-- CSRF Token -->
 		<meta name="csrf-token" content="{{ csrf_token() }}">
 
-		<title>{{ config('app.name', 'Laravel') }}</title>
+		<title>@yield('title')</title>
 
 		<!-- Scripts -->
 		<script src="{{ asset('js/app.js') }}" defer></script>
@@ -141,5 +141,61 @@
 				@yield('content')
 			</main>
 		</div>
-	</body>
+
+
+
+<!-- Footer -->
+<footer class="text-center text-white" style="background-color:#573429;">
+
+
+	<!-- Grid container -->
+	<div class="container p-1">
+	  <!-- Section: Social media -->
+	  <section class="mb-4">
+		<!-- Facebook -->
+		<a class="btn btn-outline-light btn-floating m-1" href="{{('http://www.facebook.com') }}" role="button"
+		  ><i class="bi bi-facebook"></i
+		></a>
+  
+		<!-- Twitter -->
+		<a class="btn btn-outline-light btn-floating m-1" href="{{('https://twitter.com') }}" role="button"
+		  ><i class="bi bi-twitter"></i
+		></a>
+  
+		<!-- Google -->
+		<a class="btn btn-outline-light btn-floating m-1" href="{{('https://google.com') }}"  role="button"
+		  ><i class="bi bi-google"></i
+		></a>
+  
+		<!-- Instagram -->
+		<a class="btn btn-outline-light btn-floating m-1" href="{{('https://instagram.com') }}"  role="button"
+		  ><i class="bi bi-instagram"></i
+		></a>
+  
+		<!-- Linkedin -->
+		<a class="btn btn-outline-light btn-floating m-1" href="{{('https://linkedin.com') }}"  role="button"
+		  ><i class="bi bi-linkedin"></i
+		></a>
+		<!-- Linkedin -->
+  
+	
+
+		
+  <br><br>
+ 
+  
+	<!-- Copyright -->
+	<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+	  © 2022 Copyright <br>
+	  <a class="text-white" href="{{ url('/privacy') }}">Privacy Policy</a> <br>
+	  <a class="text-white" href="{{ url('/terms') }}">Terms of Use</a>
+	</div> 
+	<!-- Copyright -->
+
+
+  </footer>
+  <!-- Footer -->
+
+
+</body>
 </html>

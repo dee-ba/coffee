@@ -1,41 +1,32 @@
-<!DOCTYPE html>
+@extends ('layouts.app')
+@section ('title', 'Product Index')
+@section ('content')
 
-@extends('layouts.app')
 
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Beverages Index</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
-	</head>
-	<body>
-		@section('content')
-		<div class="container mt-2">
-			<div class="row">
-				<div class="col-lg-12 margin-tb">
-					<div class="pull-left">
-						<h2>Index Beverages</h2>
-					</div>
-					<div class="pull-right mb-2">
-						<a class="btn btn-success" href="/products/create"> Create Product</a>
-					</div>					
-				</div>
-			</div>
+<div class="border p-5 mb-1">
 
-			<table class="table table-bordered">
+			<div class="text-center text-white p-5" style="background-color:#573429;"> 
+				<h1>Products Index</h1>
+		</div> 
+		<br><br>
+			
+			
+			<table class="table table-responsive-sm border p-5 mb-5">
+				<thead class="thead-dark">
 				<tr>
-					<th>ID</th>
-					<th>Name</th>
-					<th width="380px">Description</th>
-					<th>Image</th>
-					<th>Price</th>
-					<th>Category</th>
-					<th>Stock</th>
-					<th>Created_at</th>
-					<th>Updated_at</th>
-					<th width="280px">Action</th>
+					<th scope="col">ID</th>
+					<th scope="col">Name</th>
+					<th scope="col" width="380px">Description</th>
+					<th scope="col">Image</th>
+					<th scope="col">Price</th>
+					<th scope="col">Category</th>
+					<th scope="col">Stock</th>
+					<th scope="col">Created_at</th>
+					<th scope="col">Updated_at</th>
+					<th scope="col" width="280px">Action</th>
 				</tr>
-
+			
+	
 				@foreach ($product as $prod)
 					<tr>						
 						<td>{{ $prod->id }}</td>
@@ -47,7 +38,7 @@
 						<td>{{ $prod->stock }}</td>
 						<td>{{ $prod->created_at }}</td>
 						<td>{{ $prod->updated_at }}</td>
-
+	
 						<td>
 							<form action="/products/{{ $prod->id }}" method="Post">							
 								<a class="btn btn-primary" href="/products/{{ $prod->id }}/edit">Edit</a>
@@ -55,10 +46,24 @@
 								@method('DELETE')							
 								<button type="submit" class="btn btn-danger">Delete</button>
 							</form>
-						</td>						
-					</tr>
+						</td>	
+					</thead>					
+					</tbody>
 				@endforeach
 			</table>
+	
+			
+
+
+		</div>
+	
+
+	
+
+
+
+
+			
 			<nav>
 				<ul class="pagination">
 					<li class="page-item"><a class="page-link" href="{{ $product->previousPageUrl() }}">Previous</a></li>
@@ -66,8 +71,7 @@
 					<li class="page-item"><a class="page-link" href="{{ $product->nextPageUrl() }}">Next</a></li>
 				</ul>
 			</nav>			
-		</div>
-		@endsection		
 		
-	</body>
-</html>
+</div>
+@endsection		
+		

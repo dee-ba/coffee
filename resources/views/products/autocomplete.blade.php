@@ -1,15 +1,9 @@
-<!DOCTYPE html>
+@extends ('layouts.app')
+@section ('title', 'Beverages Index')
+@section ('content')
 
-@extends('layouts.app')
 
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Beverages Index</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
-	</head>
-	<body>
-		@section('content')
+
 
         <form action="/products/autocomplete" method="POST" enctype="multipart/form-data">
             @csrf
@@ -97,6 +91,5 @@
 				</ul>
 			</nav>			
 		</div>
-		@endsection		
-	</body>
-</html>
+
+@endsection		

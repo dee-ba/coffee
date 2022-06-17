@@ -1,28 +1,26 @@
-<!DOCTYPE html>
-
-@extends('layouts.app')
-
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>User Index</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
-	</head>
-	<body>
-		@section('content')
+@extends ('layouts.app')
+@section ('title', 'User Index')
+@section ('content')
+	
 
 
-<body>
-    
-<h1>Welcome to the User Index</h1>
+  <div class="border p-5 mb-5">
+        
 
-<div class="pull-right mb-2">
-  <a class="btn btn-success" href="/users/create"> Create User</a>
+    <div class="text-center text-white p-5" style="background-color:#573429;"> 
+            <h1>Users Index</h1>
+    </div> 
+    <br><br>
+
+   
+ 
+<div class="pull-right mb-3">
+  <a class="btn btn-success" href="/users/create"> Create a New User</a>
 </div>	
 
 
       
-<table class="table table-responsive-sm">
+<table class="table table-responsive-sm border p-5 mb-5">
   <thead class="thead-dark">
     <tr>
       <th scope="col">First Name</th>
@@ -74,12 +72,10 @@
   </ul>
 </nav>
 
-
+</div> 
 
 
 
 
 
 	@endsection	
-</body>
-</html>

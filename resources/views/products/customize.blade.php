@@ -1,14 +1,11 @@
-<!DOCTYPE html>
+@extends ('layouts.app')
+@section ('title', 'Customize')
+@section ('content')
 
-@extends('layouts.app')
 
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Customize</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
-	</head>
-	<body>
+
+
+
 		@section('content')
 		<div class="container mt-2">
 			<div class="row">
@@ -117,6 +114,6 @@
 				</div>				
 			</form>
 		</div>
-		@endsection		
-	</body>
-</html>
+
+
+@endsection		

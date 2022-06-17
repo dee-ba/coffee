@@ -37,8 +37,8 @@ class UserSeeder extends Seeder
         'email' => $faker -> email(),
         'email_verified_at' => $faker -> date(),
         'password' => $faker -> password(),
-        'created_at' => date('y-m-d h:m:s'),	
-		'updated_at' => date('y-m-d h:m:s')	   
+        'created_at' => date('y-m-d'),	
+		'updated_at' => date('y-m-d')	   
         ]);
     }
 }
