@@ -8,7 +8,10 @@
 		<title>Create Order Form</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
 	</head>
-	<body>
+	<body
+
+
+
 		@section('content')
 		<div class="container mt-2">
 			<div class="row">

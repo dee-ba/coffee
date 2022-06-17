@@ -3,8 +3,13 @@
 @section ('content')
 
 
-   
-    <h1 class="text-primary" style="margin: 40px; text-align: center;">Create New Member</h1>
+<div class="border p-5 mb-1">
+        
+
+    <div class="text-center text-white p-1" style="background-color:#573429;"> 
+            <h1>Create New Member</h1>
+    </div> 
+    <br><br>
 
  
     <div style="text-align: center";>
@@ -13,32 +18,34 @@
             
             <form action="/users" method = "POST"> 
                 @csrf
-               <strong>First Name</strong>
+               <strong>First Name</strong><br>
                 <input type="text" name="first_name" placeholder="first name"/>
                 <br><br>
-                <strong>Last Name</strong><input type="text" name="last_name" placeholder="last name"/>
+                <strong>Last Name</strong><br>
+                <input type="text" name="last_name" placeholder="last name"/>
                 <br><br>
-                <strong>Street Name</strong>
+                <strong>Street Name</strong><br>
                 <input type="text" name="street_name" placeholder="street_name"/>
                 <br><br>
-                <strong>City</strong>
+                <strong>City</strong><br>
                 <input type="text" name="city" placeholder="city"/>
                 <br><br>
-                <strong>Postcode</strong>
+                <strong>Postcode</strong><br>
                 <input type="text" name="postal_code" placeholder="postal_code"/>
                 <br><br>
-                <strong>Phone</strong>
+                <strong>Phone</strong><br>
                 <input type="text" name="phone" placeholder="phone"/>
                 <br><br>
-                <strong>Date of Birth</strong>
+                <strong>Date of Birth</strong><br>
                 <input type="text" name="date_of_birth" placeholder="date_of_birth"/>
                 <br><br>
-                <strong>Email</strong>
+                <strong>Email</strong><br>
                 <input type="text" name="email" placeholder="email"/>
                 <br><br>
-                <strong>Password</strong>
+                <strong>Password</strong><br>
                 <input type="text" name="password" placeholder="password"/>
-                <br><br>
+                <br><br><br>
+
                 
                 
                 <button type="submit" class="btn btn-primary">Submit</button>

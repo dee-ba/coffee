@@ -2,18 +2,22 @@
 @section ('title', 'Product Index')
 @section ('content')
 
-
 <div class="border p-5 mb-1">
+        
 
-			<div class="text-center text-white p-5" style="background-color:#573429;"> 
-				<h1>Products Index</h1>
-		</div> 
-		<br><br>
+    <div class="text-center text-white p-1" style="background-color:#573429;"> 
+            <h1>Products Index</h1>
+    </div> 
+    <br><br>
+
+	<div class="pull-right mb-3">
+		<a class="btn btn-success" href="/products/create"> Add a New Product</a>
+	  </div>	
+		
 			
-			
-			<table class="table table-responsive-sm border p-5 mb-5">
-				<thead class="thead-dark">
-				<tr>
+	  <table class="table table-hover table-responsive-sm border p-5 mb-5">
+		<thead class="thead-dark">
+			<tr style="background-color: #B58D7B; color:white">
 					<th scope="col">ID</th>
 					<th scope="col">Name</th>
 					<th scope="col" width="380px">Description</th>
@@ -23,7 +27,7 @@
 					<th scope="col">Stock</th>
 					<th scope="col">Created_at</th>
 					<th scope="col">Updated_at</th>
-					<th scope="col" width="280px">Action</th>
+					<th scope="col" width="180px">Action</th>
 				</tr>
 			
 	
@@ -32,7 +36,8 @@
 						<td>{{ $prod->id }}</td>
 						<td>{{ $prod->name }}</td>
 						<td>{{ $prod->description }}</td>
-						<td> <img class="card-img" src="{{ $prod->image }}"></td>
+						<td> <img class="card-img" style="background-color:red"
+							src="{{ $prod->image }}"></td>
 						<td>{{ $prod->price }}</td>
 						<td>{{ $prod->category }}</td>
 						<td>{{ $prod->stock }}</td>

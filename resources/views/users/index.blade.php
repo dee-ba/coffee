@@ -4,10 +4,10 @@
 	
 
 
-  <div class="border p-5 mb-5">
+  <div class="border p-5 mb-1">
         
 
-    <div class="text-center text-white p-5" style="background-color:#573429;"> 
+    <div class="text-center text-white p-1" style="background-color:#573429;"> 
             <h1>Users Index</h1>
     </div> 
     <br><br>
@@ -20,9 +20,9 @@
 
 
       
-<table class="table table-responsive-sm border p-5 mb-5">
+<table class="table table-hover table-responsive-sm border p-5 mb-5">
   <thead class="thead-dark">
-    <tr>
+    <tr style="background-color: #B58D7B; color:white">
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
       <th scope="col">Street Name</th>

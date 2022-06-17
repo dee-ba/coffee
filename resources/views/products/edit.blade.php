@@ -1,18 +1,21 @@
 @extends ('layouts.app')
 @section ('title', 'Edit Product Form')
 @section ('content')
-@endsection	
 
 
-		@section('content')
+<div class="border p-5 mb-1">
+        
+
+    <div class="text-center text-white p-1" style="background-color:#573429;"> 
+            <h1>Edit Product Details</h1>
+    </div> 
+    <br><br>
+
 		<div class="container mt-2">
 			<div class="row">
 				<div class="col-lg-12 margin-tb">
-					<div class="pull-left">
-						<h2>Edit Product</h2>
-					</div>
 					<div class="pull-right">
-						<a class="btn btn-primary" href="/products" enctype="multipart/form-data"> Back</a>
+						<a class="btn btn-primary" href="/products" enctype="multipart/form-data"> Back</a> <br><br>
 					</div>
 				</div>
 			</div>
@@ -33,7 +36,11 @@
 						<div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
 						@enderror
 					</div>
+					<br>
 				</div>
+
+			
+
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
 						<strong>Description:</strong>
@@ -42,6 +49,7 @@
 						<div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
 						@enderror
 					</div>
+					<br>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
@@ -51,6 +59,7 @@
 						<div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
 						@enderror
 					</div>
+					<br>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
@@ -60,8 +69,11 @@
 						<div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
 						@enderror
 					</div>
-				</div>				
-
+					<br>
+				</div>			
+				
+				
+				<div class="col-xs-12 col-sm-12 col-md-12">
 				<div class="form-group">
 					<strong>Category:</strong><br>
 					<select name="category" id="category">
@@ -71,8 +83,13 @@
 					</select>
 					@error('category')
 					<div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-					@enderror							
-				</div>	
+					@enderror	
+											
+				</div>
+				<br>
+				</div>
+				
+				
 				
 				<div class="col-xs-12 col-sm-12 col-md-12">
 					<div class="form-group">
@@ -82,7 +99,9 @@
 						<div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
 						@enderror
 					</div>
-				</div>					
+					<br>
+				</div>	
+				<br><br><br><br>				
 				<button type="submit" class="btn btn-primary ml-3">Submit</button>
 			</div>
 			</form>
