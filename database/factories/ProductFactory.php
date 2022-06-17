@@ -3,7 +3,8 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
+use Illuminate\Support\date;
+
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Product>
@@ -18,13 +19,15 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
-            'description' => 'Blended with milk and ice, layered on top of whipped cream and chocolate cookie crumble and topped with vanilla whipped cream, mocha drizzle and even more chocolate cookie crumble. Each sip is as good as the last . . . all the way to the end.',
-            'image' => url('app/public/images/mochaccino'),
-            'price' => 3.99,
+            'name' => 'Iced Latte',
+            'description' => 'Blended with milk and ice, layered on top of whipped cream.',
+            'image' => 'https://images.unsplash.com/photo-1524095731963-b4e38d1b3329?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
+            'price' => 4.99,
             'category' => "cold",
-            'stock' => random_int(50,100)
-                
+            'stock' => 1,
+            'created_at' => date('y-m-d'),	
+		    'updated_at' => date('y-m-d')	
+    
         ];
 
     }
