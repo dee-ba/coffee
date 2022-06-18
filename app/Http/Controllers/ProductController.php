@@ -143,4 +143,13 @@ class ProductController extends Controller
 		return redirect('products')
 		->with('success','Product has been deleted successfully');        
     }
+
+
+    public function search()
+    {
+        return view('products/search');
+    }
+
+
+
 }

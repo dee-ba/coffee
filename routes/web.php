@@ -96,3 +96,11 @@ Route::get('/privacy', function () {
 Route::get('/terms', function () {
     return view('terms');
 });
+
+
+//Search
+Route::get('/search', [ProductController::class, 'search']);
+
+
+
+
