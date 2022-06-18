@@ -48,7 +48,7 @@
 
 					<div class="container">
 						<div class="carousel-caption text-end">
-							<h1 id="stroked_text">Iced Tea.</h1>
+							<h1 id="stroked_text">Iced Coffee.</h1>
 							<p id="stroked_text">Try some iced tea like you never had before.</p>
 							<p><a class="btn btn-lg btn-primary" href="{{ url('/cold_products') }}">Browse for more</a></p>
 						</div>

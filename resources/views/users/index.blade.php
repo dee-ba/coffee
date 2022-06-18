@@ -21,7 +21,7 @@
 
       
 <table class="table table-hover table-responsive-sm border p-5 mb-5">
-  <thead class="thead-dark">
+ 
     <tr style="background-color: #B58D7B; color:white">
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
@@ -56,7 +56,7 @@
     </td> 
    
 
-  </thead>
+
   </tbody>
   @endforeach
 </table>

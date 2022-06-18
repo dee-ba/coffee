@@ -5,7 +5,7 @@
 <div class="border p-5 mb-1">
         
 
-    <div class="text-center text-white p-1" style="background-color:#573429;"> 
+    <div class="text-center text-white p-1"> 
             <h1>Products Index</h1>
     </div> 
     <br><br>
@@ -16,8 +16,7 @@
 		
 			
 	  <table class="table table-hover table-responsive-sm border p-5 mb-5">
-		<thead class="thead-dark">
-			<tr style="background-color: #B58D7B; color:white">
+			<tr>
 					<th scope="col">ID</th>
 					<th scope="col">Name</th>
 					<th scope="col" width="380px">Description</th>
@@ -52,7 +51,7 @@
 								<button type="submit" class="btn btn-danger">Delete</button>
 							</form>
 						</td>	
-					</thead>					
+								
 					</tbody>
 				@endforeach
 			</table>
