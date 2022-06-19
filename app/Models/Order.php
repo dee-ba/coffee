@@ -10,10 +10,8 @@ class Order extends Model
     use HasFactory;
 
 
-
-
-    public function user()
+    public function show(User $user)
     {
-        return $this->belongsTo(User::class);
+        dd ($user -> order() ->get());
     }
 }
