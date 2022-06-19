@@ -5,10 +5,13 @@
 <div class="border p-5 mb-1">
         
 
-    <div class="text-center text-white p-1"> 
-            <h1>Products Index</h1>
-    </div> 
-    <br><br>
+	<div class="border p-5 mb-1">
+        
+
+		<div class="text-center text-white p-1" style="background-color:#573429;"> 
+				<h1>Products Index</h1>
+		</div> 
+		<br><br>
 
 	<div class="pull-right mb-3">
 		<a class="btn btn-success" href="/products/create"> Add a New Product</a>
@@ -16,7 +19,7 @@
 		
 			
 	  <table class="table table-hover table-responsive-sm border p-5 mb-5">
-			<tr>
+		<tr style="background-color: #B58D7B; color:white">
 					<th scope="col">ID</th>
 					<th scope="col">Name</th>
 					<th scope="col" width="380px">Description</th>
@@ -29,7 +32,7 @@
 					<th scope="col" width="180px">Action</th>
 				</tr>
 			
-	
+				<tbody>
 				@foreach ($product as $prod)
 					<tr>						
 						<td>{{ $prod->id }}</td>
@@ -52,11 +55,17 @@
 							</form>
 						</td>	
 								
-					</tbody>
+				</tbody>
 				@endforeach
 			</table>
 	
-			
+			<nav>
+				<ul class="pagination">
+					<li class="page-item"><a class="page-link" href="{{ $product->previousPageUrl() }}">Previous</a></li>
+					<li class="page-item"><a class="page-link"> Page: {{ $product->currentPage() }} / {{ $product->lastPage() }} </a></li>								
+					<li class="page-item"><a class="page-link" href="{{ $product->nextPageUrl() }}">Next</a></li>
+				</ul>
+			</nav>	
 
 
 		</div>

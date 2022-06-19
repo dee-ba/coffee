@@ -6,7 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\Order_ItemController;
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\SearchController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -79,9 +79,6 @@ Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove'
 Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
 
 
-//Shopping
-Route::get('/products/autocomplete', [SearchController::class,'autocomplete']);
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -97,9 +94,10 @@ Route::get('/terms', function () {
     return view('terms');
 });
 
+//search
+Route::get('/search/', [ProductController::class, 'search']);
 
-//Search
-Route::get('/search', [ProductController::class, 'search']);
+
 
 
 

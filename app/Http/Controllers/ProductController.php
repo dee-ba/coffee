@@ -14,6 +14,97 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+
+    public function search(Request $request){
+      // Get the search value from the request
+      $search = $request->input('search');
+  
+      // Search in the title and body columns from the posts table
+      $products = Product::query()
+          ->where('name', 'LIKE', "%{$search}%")
+          // ->orWhere('description', 'LIKE', "%{$search}%")   //search in description field//
+          ->get();
+  
+      // Return the search view with the resluts compacted
+     
+      return view('search', compact('products'));
+  }
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
     public function index()
     {
 		$data['product'] = Product::orderBy('id','asc')->paginate(5);	
@@ -142,12 +233,6 @@ class ProductController extends Controller
 		$prod->delete();
 		return redirect('products')
 		->with('success','Product has been deleted successfully');        
-    }
-
-
-    public function search()
-    {
-        return view('products/search');
     }
 
 

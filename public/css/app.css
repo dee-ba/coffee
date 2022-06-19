@@ -18110,4 +18110,14 @@ textarea.form-control-lg {
 	-webkit-text-fill-color: white;
 }
 
+.search_bar {
+  margin: 5px 0px 3px 0px; 
+   
+}
+
+.search_button {
+    margin: -2px 8px 0px 0px ;
+    padding: 2px 8px 0px 8px ;
+    font-size: 12px;
+}
 
