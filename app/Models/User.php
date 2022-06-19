@@ -44,9 +44,14 @@ class User extends Authenticatable
     ];
 
 
+//1 to 1 relation : Users to Orders
 
+    public function order()
+    {
+    return $this -> hasOne(Order::class);
+    }
 
-    //testing
+//testing
 
     // public function show(Order $order)
     // {
@@ -54,10 +59,10 @@ class User extends Authenticatable
     // }
 
 
-    public function show(User $user)
-    {
+    // public function show(User $user)
+    // {
     
-        dd($user->order()->get());
-    }
+    //     dd($user->order()->get());
+    // }
 
 }

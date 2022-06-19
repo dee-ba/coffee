@@ -19,7 +19,9 @@
 		<div id="app">
 			<nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark navbar-light bg-light">
 				<div class="container">
-					<a class="navbar-brand" href="{{ url('/') }}"><i class="bi bi-house-door"></i> Home</a>
+					<a class="navbar-brand" href="{{ url('/') }}"><img src="/images/logo.jpg" alt="" width="60px" style="margin-right: 10px"><i class="bi bi-home"></i>Home</a>
+					
+					
 					
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
