@@ -30,6 +30,8 @@ class Order_ItemSeeder extends Seeder
         'flavour' => 'vanilla',
         'milk' => $faker -> boolean(),
         'size' => $faker -> sizeof(),
+        'created_at' => date('y-m-d'),	
+		'updated_at' => date('y-m-d')
     
     
         ]);

@@ -19,9 +19,11 @@ class OrderSeeder extends Seeder
     {
         $faker = Faker::create();
         DB::table('orders')->insert([
-        'id' => $faker ->firstName(),
-        'user_id' => $faker ->lastName(),
-        'order_items_id' => $faker ->streetName(),
+        'id' => $faker->numberBetween(1,50),
+        'user_id' => $faker->numberBetween(1,50),
+        'order_items_id' =>$faker->numberBetween(1,50),
+        'created_at' => date('y-m-d'),	
+		'updated_at' => date('y-m-d')
        
         ]);
     }
