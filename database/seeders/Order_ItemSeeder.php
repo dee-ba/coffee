@@ -21,15 +21,16 @@ class Order_ItemSeeder extends Seeder
     {
         $faker = Faker::create();
         DB::table('order_items')->insert([
-        'order_id' => $faker ->firstName(),
-        'product_id' => $faker ->lastName(),
-        'amount' => $faker ->random_int (3,9),
+        'id' => $faker->numberBetween(1,50),
+        'order_id' => $faker->numberBetween(1,50),
+        'product_id' => $faker->numberBetween(1,50),
+        'amount' => $faker->numberBetween(1,50),
         'total_price' => 10.99,
         'sweetener' => 'sugar',
         'topping' => 'cream',
         'flavour' => 'vanilla',
         'milk' => $faker -> boolean(),
-        'size' => $faker -> sizeof(),
+        'size' => 'medium',
         'created_at' => date('y-m-d'),	
 		'updated_at' => date('y-m-d')
     
