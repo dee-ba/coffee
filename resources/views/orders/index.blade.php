@@ -36,7 +36,7 @@
 					<tr>						
 						<td>{{ $ord->id }}</td>
 						<td>{{ $ord->user_id }}</td>
-						<td>{{ $ord->order_item_id }}</td>
+						<td>{{ $ord->order_items_id }}</td>
 						<td>{{ $ord->created_at }}</td>
 						<td>{{ $ord->updated_at }}</td>						
 						<td>
