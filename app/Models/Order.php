@@ -10,8 +10,8 @@ class Order extends Model
     use HasFactory;
 
 
-    public function show(User $user)
+    public function orders(Order $order)
     {
-        dd ($user -> order() ->get());
+        dd ($order);
     }
 }

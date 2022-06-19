@@ -46,23 +46,10 @@ class User extends Authenticatable
 
 //1 to 1 relation : Users to Orders
 
-    public function order()
+    public function orders(User $user)
     {
-    return $this -> hasOne(Order::class);
+    dd ($user -> order()->get());
     }
 
-//testing
-
-    // public function show(Order $order)
-    // {
-    //    return $this->hasMany(Order::class);
-    // }
-
-
-    // public function show(User $user)
-    // {
-    
-    //     dd($user->order()->get());
-    // }
 
 }

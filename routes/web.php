@@ -100,6 +100,9 @@ Route::get('/search/', [ProductController::class, 'search']);
 
 //order 
 
+Route::get('/users/{user}' , [UserController::class, 'orders']);
+Route::get('/order/{order}' , [OrderController::class ,'orders']);
+
 
 
 

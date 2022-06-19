@@ -17,39 +17,6 @@ class OrderController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function show()
-    {
-    
-    $user_id = auth()->user('id');
-    $user = User::find($user_id);
-    
-		return view('orders/index', $user_id);
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public function index()
     {
     

@@ -13,14 +13,17 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function orders() 
+    {
+        return $this->hasOne(Order::class);
+    }
+
     public function index()
     {
       
         $users = User::paginate(15);
         // $users = User::all();       without pages
         return view('users/index', ['users' => $users]);
-   
-
     }
 
     /**
