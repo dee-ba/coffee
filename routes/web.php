@@ -24,34 +24,12 @@ Route::get('/', function () {
 });
 
 
-//User Routes
-Route::get('/users' , [UserController::class, 'index']);
-Route::get("edit/{id}", [UserController::class,'edit']);
-Route::post("/edit", [UserController::class,'update']);
-Route::get("delete/{id}", [UserController::class,'delete']);
-Route::get("users/create", [UserController::class,'create']);
-Route::post("/users", [UserController::class,'store']);
-
 
 //Product Controller Routes
-Route::get('/products', [ProductController::class, 'index']);
 Route::get('/hot_products', [ProductController::class, 'hot_index']);
 Route::get('/cold_products', [ProductController::class, 'cold_index']);
-Route::get('/products/create', [ProductController::class, 'create']);
-Route::get('/products/{prod}/edit', [ProductController::class, 'edit']);
 Route::get('/customize/{prod}', [ProductController::class, 'customize']);
-Route::match(['put','patch'], '/products/{prod}/edit', [ProductController::class, 'update']);
-Route::post('/products', [ProductController::class, 'store']);
-Route::delete('/products/{prod}', [ProductController::class, 'destroy']);
 
-
-//Order Controller Routes
-Route::get('/orders', [OrderController::class, 'index']);
-Route::get('/orders/create', [OrderController::class, 'create']);
-Route::get('/orders/{ord}/edit', [OrderController::class, 'edit']);
-Route::match(['put','patch'], '/orders/{ord}/edit', [OrderController::class, 'update']);
-Route::post('/orders', [OrderController::class, 'store']);
-Route::delete('/orders/{ord}', [OrderController::class, 'destroy']);
 
 
 //Order_Item Controller Routes
@@ -98,13 +76,36 @@ Route::get('/terms', function () {
 Route::get('/search/', [ProductController::class, 'search']);
 
 
-//order 
-
-Route::get('/users/{user}' , [UserController::class, 'orders']);
-Route::get('/order/{order}' , [OrderController::class ,'orders']);
 
 
+Route::group(['middleware' => ['auth']], function () {
+ 
+//User Routes
+Route::get('/users' , [UserController::class, 'index']);
+Route::get("edit/{id}", [UserController::class,'edit']);
+Route::post("/edit", [UserController::class,'update']);
+Route::get("delete/{id}", [UserController::class,'delete']);
+Route::get("users/create", [UserController::class,'create']);
+Route::post("/users", [UserController::class,'store']);
+
+
+//Product Controller Routes
+Route::get('/products', [ProductController::class, 'index']);
+Route::get('/products/create', [ProductController::class, 'create']);
+Route::get('/products/{prod}/edit', [ProductController::class, 'edit']);
+Route::match(['put','patch'], '/products/{prod}/edit', [ProductController::class, 'update']);
+Route::post('/products', [ProductController::class, 'store']);
+Route::delete('/products/{prod}', [ProductController::class, 'destroy']);   
 
 
 
+//Order Controller Routes
+Route::get('/orders', [OrderController::class, 'index']);
+Route::get('/orders/create', [OrderController::class, 'create']);
+Route::get('/orders/{ord}/edit', [OrderController::class, 'edit']);
+Route::match(['put','patch'], '/orders/{ord}/edit', [OrderController::class, 'update']);
+Route::post('/orders', [OrderController::class, 'store']);
+Route::delete('/orders/{ord}', [OrderController::class, 'destroy']);
 
+
+});

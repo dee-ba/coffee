@@ -16,7 +16,6 @@ class ProductController extends Controller
      */
 
 
-
     public function search(Request $request){
       // Get the search value from the request
       $search = $request->input('search');

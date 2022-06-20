@@ -10,8 +10,5 @@ class Order extends Model
     use HasFactory;
 
 
-    public function orders(Order $order)
-    {
-        dd ($order);
-    }
+   
 }
