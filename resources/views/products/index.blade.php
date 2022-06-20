@@ -33,7 +33,7 @@
 					<th>Stock</th>
 					<th>Created_at</th>
 					<th>Updated_at</th>
-					<th width="280px">Action</th>
+					<th>Action</th>
 				</tr>
 
 				@foreach ($product as $prod)
@@ -42,7 +42,7 @@
 						<td>{{ $prod->name }}</td>
 						<td>{{ $prod->description }}</td>
 						
-						<td> <img src="{{ $prod->image }}"></td>
+						<td> <img class="card-img" src="{{ $prod->image }}"></td>
 						<td>{{ $prod->price }}</td>
 						<td>{{ $prod->category }}</td>
 						<td>{{ $prod->stock }}</td>
@@ -50,12 +50,17 @@
 						<td>{{ $prod->updated_at }}</td>
 
 						<td>
-							<form action="/products/{{ $prod->id }}" method="Post">							
-								<a class="btn btn-primary" href="/products/{{ $prod->id }}/edit">Edit</a>
-								@csrf
-								@method('DELETE')							
-								<button type="submit" class="btn btn-danger">Delete</button>
-							</form>
+						    <div class="container px-5 py-5">
+								<div class="row">
+								
+									<form action="/products/{{ $prod->id }}" method="Post">							
+										<a class="col mx-1 btn btn-primary" href="/products/{{ $prod->id }}/edit">Edit</a>
+										@csrf
+										@method('DELETE')							
+										<button type="submit" class="col mx-1 btn btn-danger">Delete</button>
+									</form>
+								</div>
+							</div>
 						</td>						
 					</tr>
 				@endforeach

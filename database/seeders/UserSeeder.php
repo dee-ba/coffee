@@ -36,8 +36,8 @@ class UserSeeder extends Seeder
         'date_of_birth' => $faker -> dateTimeBetween('-30 years' , 'now'),
         'email' => $faker -> email(),
         'email_verified_at' => $faker -> date(),
-        'password' => $faker -> password()
-    
+        'password' => $faker -> password(),
+		'timestamps' => $faker -> date()
         ]);
     }
 }
