@@ -143,7 +143,7 @@
 												
 											</div>
 											
-											<a href="{{ url('/products/all') }}">Continue Shopping</a>
+											<a href="{{ url('all') }}">Continue Shopping</a>
 										</div>
 
 

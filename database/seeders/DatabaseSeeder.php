@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Product;
+use App\Models\Coupon;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,7 +19,8 @@ class DatabaseSeeder extends Seeder
     {
         //$this->call (AdminSeeder::class); 
          
-        User::factory(10)->create();
+        Coupon::factory(5)->create();
+         //User::factory(10)->create();
          //$this->call (ProductSeeder::class); 
          //$this->call (Order_ItemSeeder::class); 
          //Product::factory(10)->create();
