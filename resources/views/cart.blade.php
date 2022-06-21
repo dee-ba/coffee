@@ -106,14 +106,78 @@
 										<h5>€ {{ Cart::getTotal() }}</h5>
 									</div>
 
-									<h5 class="text-uppercase mb-3">Give code</h5>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 									<div class="mb-5">
-										<div class="form-outline">
-											<input type="text" id="form3Examplea2" class="form-control form-control-lg" />
-											<label class="form-label" for="form3Examplea2">Enter your code</label>
+
+
+
+
+										<div class="checkout-info">
+
+											<label class="checkbox-field">
+												<input class="frm-input" name="have-code" id="have-code" value="" type="checkbox"><span> I have promo code</span> 
+											</label>
+
+											<div class="summary-item">
+
+												<form>
+													<p class="row-in-form" >
+														<label for="coupon-code">Enter your code:</label>
+														<input type="text" name="coupon-code"/>
+													</p>
+													<button type="submit" class="px-2 py-1 text-white btn-danger rounded">Apply</button>
+												</form>
+												
+											</div>
+											
+											<a href="{{ url('/products/all') }}">Continue Shopping</a>
 										</div>
+
+
+
+
+
+
 									</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 									<hr class="my-4">
 
