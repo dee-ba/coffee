@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\Order_ItemController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\AdminController;
 
 
 /*
@@ -109,3 +110,6 @@ Route::delete('/orders/{ord}', [OrderController::class, 'destroy']);
 
 
 });
+
+//Admin Routes
+Route::get('/admins' , [AdminController::class, 'index']);
