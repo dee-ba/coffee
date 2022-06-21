@@ -31,79 +31,12 @@ class ProductController extends Controller
       return view('search', compact('products'));
   }
 
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  public function products_index()
+    {
+		$data['product'] = Product::orderBy('id','asc')->paginate(5);	
+		return view('products/all', $data);
+    }
+ 
     public function index()
     {
 		$data['product'] = Product::orderBy('id','asc')->paginate(5);	

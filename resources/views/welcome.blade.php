@@ -65,9 +65,9 @@
 			</button>
 		</div>
 		
-		<p id="stroked_text">This text is beautiful stroked</p>
+		{{-- <p id="stroked_text">This text is beautiful stroked</p>
 		<p id="stroked_text_thick">This text is beautiful stroked thick</p>
-		<p id="stroked_text_italic">This text is beautiful stroked and italic</p>			               
+		<p id="stroked_text_italic">This text is beautiful stroked and italic</p>			                --}}
 
     </body>
 	
