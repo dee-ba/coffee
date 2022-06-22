@@ -22,7 +22,6 @@
 					<th scope="col" width="280px">Description</th>
 					<th scope="col" width="80px">Image</th>
 					<th scope="col" width="80px">Price</th>
-					<th scope="col"width="80px">Category</th>
 					<th scope="col"width="80px">Select</th>
 				
 				</tr>
@@ -35,7 +34,6 @@
 						<td> <img class="card-img" style="background-color:red"
 							src="{{ $prod->image }}"></td>
 						<td>{{ $prod->price }}</td>
-						<td>{{ $prod->category }}</td>
 						<td>
 
 
@@ -47,6 +45,9 @@
 								<input type="hidden" value="{{ $prod->price }}" name="price">
 								<input type="hidden" value="{{ $prod->image }}"  name="image">
 								<input type="hidden" value="1" name="quantity">
+
+								<a href="customize/{{$prod->id}}" class="px-1 py-1 btn btn-primary rounded" style="margin: 3px">Customize</a>
+
 								<button class="px-1 py-1 text-white btn-success rounded">Add To Cart</button>
 							</form>
 
@@ -54,10 +55,10 @@
 
 						</td>
 
-						
+					</tr>
 								
-			</tbody>
 				@endforeach
+			</tbody>
 			</table>
 	
 		

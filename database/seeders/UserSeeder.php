@@ -25,20 +25,21 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create();
+        
         DB::table('users')->insert([
-        'first_name' => $faker ->firstName(),
-        'last_name' => $faker ->lastName(),
-        'street_name' => $faker ->streetName(),
+        'first_name' => 'Dee',
+        'last_name' => 'Ali',
+        'street_name' => 'Dee Street',
         'postal_code' => Str::random(4),
-        'city' => $faker ->city(),
-        'phone' => $faker -> phoneNumber,
-        'date_of_birth' => $faker -> dateTimeBetween('-100 years' , 'now'),
-        'email' => $faker -> email(),
-        'email_verified_at' => $faker -> date(),
-        'password' => $faker -> password(),
-        'created_at' => date('y-m-d'),	
-		'updated_at' => date('y-m-d')	   
+        'city' => 'Dee City',
+        'phone' => '123456',
+        'date_of_birth' => date('Y-m-d'),
+        'email' => 'dee@hotmail.com',
+        'email_verified_at' => date('Y-m-d'),
+        'password' => bcrypt('123'),
+        'user_type' => 'Administrator',
+        'created_at' => date('Y-m-d'),	
+		'updated_at' => date('Y-m-d')	   
         ]);
     }
 }

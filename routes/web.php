@@ -30,6 +30,7 @@ Route::get('/all', [ProductController::class, 'products_index']);
 Route::get('/hot_products', [ProductController::class, 'hot_index']);
 Route::get('/cold_products', [ProductController::class, 'cold_index']);
 Route::get('/customize/{prod}', [ProductController::class, 'customize']);
+Route::get('/customize/{prod}/{id}', [ProductController::class, 'customize']);
 
 
 //Cart Controller Routes
