@@ -22,7 +22,7 @@ class CartController extends Controller
     {
 		$quantity = $request->quantity - 1;
 		$cartItems = \Cart::getContent();
-		$id = count($cartItems);
+		$id = count($cartItems) + 1;
 		
         \Cart::add([
             'id' => $id,
@@ -108,13 +108,16 @@ class CartController extends Controller
 			{
 				$ord = new Order;
 				$ord->user_id = $request->session()->get('login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d');
-				$ord->order_item_id = $ord_item->id;
+				//$ord->order_item_id = $ord_item->id;
 				$ord->save();
+				
+				//return ($ord->id);
 				
 				$run_already = true;
 			}
+			//return ($ord->id);
 			
-			$ord_item = Order_Item::find($ord_item->id);
+			//$ord_item = Order_Item::find($ord_item->id);
 			$ord_item->order_id = $ord->id;
 			$ord_item->save();				
 			
@@ -124,4 +127,14 @@ class CartController extends Controller
 		return redirect('cart');
     }	
 	
+    public function getDiscount(Request $request)
+    {
+        if($request->discount == "123456789")
+		{
+			$discount = $request->discount;
+			session()->flash('success', 'Discount code applied Successfully !');
+			return redirect()->route('cart.list', compact('discount'));			
+		}
+	return redirect()->route('cart.list');
+    }	
 }

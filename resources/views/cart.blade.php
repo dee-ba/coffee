@@ -41,18 +41,25 @@
 										</div>
 										<hr class="my-4">
 										
-										@foreach ($cartItems as $item)
+										@foreach ($cartItems as $item)	
+										<div class="border border-primary rounded bg-light">
+											<table class="table">
+												<tr class="table-primary">
+													<th>[{{ $item->size }}] - [{{ $item->sweetener }}] - [{{ $item->topping }}] - [{{ $item->flavour }}] - [{{ $item->milk }}]</th>
+												</tr>
+											</table>
+											
 											<div class="row mb-4 d-flex justify-content-between align-items-center">
-												<div class="col-md-2 col-lg-2 col-xl-2">
+												<div class="ms-2 col-md-2 col-lg-2 col-xl-2">
 													<img
 														src="{{ $item->attributes->image }}"
 														class="img-fluid rounded-3" alt="{{ $item->name }}">
 												</div>
 												<div class="col-md-3 col-lg-3 col-xl-3">
-													<h6 class="text-muted">{{ $item->name }}</h6>
+													<h6 class="text-muted"><strong>{{ $item->name }}</strong></h6>
 													<h6 class="text-muted">{{ $item->description }}</h6>
 												</div>
-												<div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+												<div class="col-md-2 col-lg-3 col-xl-2 d-flex">
 													
 													<form class="form-inline" action="{{ route('cart.update') }}" method="POST">
 														
@@ -76,19 +83,20 @@
 													</form>
 														
 												</div>
-												<div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+												<div class="col-md-2 col-lg-2 col-xl-2 offset-lg-1">
 													<h6 class="mb-0">€ {{ $item->price }}</h6>
 												</div>
 
-												<div class="col-md-1 col-lg-1 col-xl-1 text-end">
+												<div class="col-md-2 col-lg-1 col-xl-1">
 													<form action="{{ route('cart.remove') }}" method="POST">
 														@csrf
 														<input type="hidden" value="{{ $item->id }}" name="id">
-														<a href="customize/{{ $item->product_id }}" class="btn btn-outline-warning"><i class="bi bi-pencil"></i></a>
+														<a href="customize/{{ $item->product_id }}/{{ $item->id }}" class="btn btn-outline-warning"><i class="bi bi-pencil"></i></a>
 														<button class="btn btn-outline-danger"><i class="bi bi-trash3"></i></button>
 													</form>	
 												</div>
 											</div>
+										</div><br>
 										@endforeach
 										
 										<hr class="my-4">
@@ -111,15 +119,22 @@
 
 										<h5 class="text-uppercase mb-3">Give code</h5>
 
-										<div class="mb-5">
-											<div class="form-outline">
-												<input type="text" id="form3Examplea2" class="form-control form-control-lg" />
-												<label class="form-label" for="form3Examplea2">Enter your code</label>
-											</div>
-										</div>
+										<form action="{{ route('cart.discount') }}" method="POST">
+											@csrf
+											<div class="mb-2">
+												<div class="form-outline">
+													<input type="text" name="discount" id="discount" class="form-control form-control-lg" />
+													<label class="form-label" for="discount">Enter your code</label>
+												</div>
+											</div>											
+											<button class="btn btn-warning btn-block" data-mdb-ripple-color="dark"> Submit Code</button>
+										</form>
 
 										<hr class="my-4">
-
+										<div class="d-flex justify-content-between mb-5">
+											<h5 class="text-uppercase">Total discount</h5>
+											<h5>€ {{ Cart::checkDiscount() }}</h5>
+										</div>
 										<div class="d-flex justify-content-between mb-5">
 											<h5 class="text-uppercase">Total price</h5>
 											<h5>€ {{ Cart::getTotal() }}</h5>

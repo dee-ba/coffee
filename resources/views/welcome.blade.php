@@ -22,7 +22,7 @@
 			</div>
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<img class="bd-placeholder-img" width="100%" height="100%" src="{{ asset('images/priscilla-du-preez-ELnxUDFs6ec-unsplash.jpg') }}" alt="First slide">
+					<img class="bd-placeholder-img" width="100%" height="100%" src="{{ asset('images/nathan-dumlao-pMW4jzELQCw-unsplash.jpg') }}" alt="First slide">
 				
 					<div class="container">
 						<div class="carousel-caption text-start">
