@@ -39,6 +39,101 @@
                             </div>
                         </div>
 
+
+
+                        <div class="row mb-3">
+                            <label for="street_name" class="col-md-4 col-form-label text-md-end">{{ __('Street Name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="street_name" type="text" class="form-control @error('street_name') is-invalid @enderror" name="street_name" value="{{ old('street_name') }}" required autocomplete="street_name" autofocus>
+
+                                @error('street_name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                    
+                        <div class="row mb-3">
+                            <label for="postal_code" class="col-md-4 col-form-label text-md-end">{{ __('Postal Code') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="postal_code" type="text" class="form-control @error('postal_code') is-invalid @enderror" name="postal_code" value="{{ old('postal_code') }}" required autocomplete="postal_code" autofocus>
+
+                                @error('postal_code')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        
+                        
+                        <div class="row mb-3">
+                            <label for="city" class="col-md-4 col-form-label text-md-end">{{ __('City') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="city" type="text" class="form-control @error('city') is-invalid @enderror" name="city" value="{{ old('city') }}" required autocomplete="city" autofocus>
+
+                                @error('city')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
+                    
+                        
+                        <div class="row mb-3">
+                            <label for="phone" class="col-md-4 col-form-label text-md-end">{{ __('Phone') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
+
+                                @error('phone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                     
+                        
+                        <div class="row mb-3">
+                            <label for="date_of_birth" class="col-md-4 col-form-label text-md-end">{{ __('Date of Birth') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="date_of_birth" type="date" class="form-control @error('date_of_birth') is-invalid @enderror" name="date_of_birth" value="{{ old('date_of_birth') }}" required autocomplete="date_of_birth" autofocus>
+
+                                @error('date_of_birth')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 

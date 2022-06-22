@@ -42,6 +42,14 @@ Route::post('', [CartController::class, 'store_order_item']);
 Route::post('', [CartController::class, 'getDiscount'])->name('cart.discount');
 
 
+//Shopping Cart
+Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
+Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
+Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.update');
+Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
+Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -63,7 +71,7 @@ Route::get('/search/', [ProductController::class, 'search']);
 
 
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth' , 'isAdmin']], function () {
 	 
 	//User Routes
 	Route::get('/users' , [UserController::class, 'index']);
