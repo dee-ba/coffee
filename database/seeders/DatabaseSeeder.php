@@ -23,9 +23,9 @@ class DatabaseSeeder extends Seeder
          User::factory(10)->create();
          $this->call (ProductSeeder::class); 
          //$this->call (Order_ItemSeeder::class); 
-         //Product::factory(10)->create();
-         //$this->call (UserSeeder::class);
-         //$this->call (OrderSeeder::class);      
+         Product::factory(10)->create();
+         $this->call (UserSeeder::class);
+         $this->call (OrderSeeder::class);      
     
     }
 }
