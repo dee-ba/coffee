@@ -1,19 +1,8 @@
-@extends('layouts.app')
+@extends ('layouts.app')
+@section ('title', 'Welcome')
+@section ('content')
 
-@section('content')
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>	
-		
-		<!-- Styles -->
-		<link href="{{ asset('css/app.css') }}" rel="stylesheet">		
-    </head>
-	
-    <body>
 		<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
 			<div class="carousel-indicators">
 				<button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -69,7 +58,4 @@
 		<p id="stroked_text_thick">This text is beautiful stroked thick</p>
 		<p id="stroked_text_italic">This text is beautiful stroked and italic</p>			                --}}
 
-    </body>
-	
-</html>
 @endsection

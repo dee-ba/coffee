@@ -127,15 +127,11 @@
 
 										<div class="checkout-info">
 
-											<label class="checkbox-field">
-												<input class="frm-input" name="have-code" id="have-code" value="" type="checkbox"><span> I have promo code</span> 
-											</label>
-
-											<div class="summary-item">
+										<div class="summary-item">
 
 												<form>
 													<p class="row-in-form" >
-														<label for="coupon-code">Enter your code:</label>
+														<label for="coupon-code">Enter your promo code here:</label>
 														<input type="text" name="coupon-code"/>
 													</p>
 													<button type="submit" class="px-2 py-1 text-white btn-danger rounded">Apply</button>

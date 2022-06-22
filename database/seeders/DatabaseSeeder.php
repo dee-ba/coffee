@@ -19,9 +19,9 @@ class DatabaseSeeder extends Seeder
     {
         //$this->call (AdminSeeder::class); 
          
-        Coupon::factory(5)->create();
-         //User::factory(10)->create();
-         //$this->call (ProductSeeder::class); 
+        //Coupon::factory(5)->create();
+         User::factory(10)->create();
+         $this->call (ProductSeeder::class); 
          //$this->call (Order_ItemSeeder::class); 
          //Product::factory(10)->create();
          //$this->call (UserSeeder::class);
