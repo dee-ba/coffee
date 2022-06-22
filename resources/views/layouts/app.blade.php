@@ -46,8 +46,7 @@
 									<i class="bi bi-wrench-adjustable-circle"></i> Test Pages
 								</a>
 									<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-										<a class="dropdown-item" href="{{ url('/products') }}">Products</a>
-										<a class="dropdown-item" href="{{ url('/customize') }}">Customize Product</a>	
+										<a class="dropdown-item" href="{{ url('/products') }}">Products</a>	
 										<a class="dropdown-item" href="{{ url('/users') }}">Users</a>		
 										<a class="dropdown-item" href="{{ url('/orders') }}">Orders</a>		
 										<a class="dropdown-item" href="{{ url('/order_items') }}">Order Items</a>	

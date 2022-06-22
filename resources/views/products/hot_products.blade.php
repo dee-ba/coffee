@@ -25,13 +25,21 @@
 							
 							<form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
 								@csrf
-								<input type="hidden" value="{{ $prod->id }}" name="id">
+								<!--<input type="hidden" value="{{ $prod->id }}" name="id">-->
+								<input type="hidden" value="{{ $prod->id }}" name="product_id">
 								<input type="hidden" value="{{ $prod->name }}" name="name">
 								<input type="hidden" value="{{ $prod->description }}" name="description">
+								
+								<input type="hidden" value="Sugar" name="sweetener">
+								<input type="hidden" value="None" name="topping">
+								<input type="hidden" value="None" name="flavour">
+								<input type="hidden" value="None" name="milk">
+								<input type="hidden" value="Medium" name="size">
+								
 								<input type="hidden" value="{{ $prod->price }}" name="price">
 								<input type="hidden" value="{{ $prod->image }}"  name="image">
-								<input type="hidden" value="1" name="quantity">
-								<a href="customize/{{$prod->id}}" class="btn btn-primary">Customize</a>
+								<input type="hidden" value="2" name="quantity">
+								<a href="customize/{{$prod->id}}" class="px-4 py-2 btn btn-primary rounded">Customize</a>
 								<button class="px-4 py-2 text-white bg-success rounded">Add To Cart</button>
 							</form>
 							
