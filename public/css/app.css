@@ -5711,6 +5711,7 @@ textarea.form-control-lg {
   .modal-fullscreen-lg-down .modal-footer {
     border-radius: 0;
   }
+
 }
 @media (max-width: 1199.98px) {
   .modal-fullscreen-xl-down {
@@ -5733,6 +5734,8 @@ textarea.form-control-lg {
   .modal-fullscreen-xl-down .modal-footer {
     border-radius: 0;
   }
+
+ 
 }
 @media (max-width: 1399.98px) {
   .modal-fullscreen-xxl-down {
@@ -18065,6 +18068,7 @@ textarea.form-control-lg {
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
+
 @media (min-width: 40em) 
 {
 	/* Bump up size of carousel content */
@@ -18123,7 +18127,23 @@ textarea.form-control-lg {
     font-size: 12px;
 }
 
-.webbanner {
-  height: 30em;
-  width: 100em;
+
+@media (max-width: 550px)
+{
+  .webbanner {
+    height: 14em;
+    width: 30em;
+  }
 }
+
+@media (min-width: 550px)
+{
+  .webbanner {
+    height: 24em;
+    width: 95.9em;
+  }
+}
+
+
+
+

@@ -55,11 +55,32 @@
 </div>
 
 
-<div>
+
+
+
+
+
+<div class="container mt-2">
+	<div class="row">
+		<img class="webbanner" src="{{ asset('images/advert.jpg') }}" alt="Banner image">
+	</div>			
+</div>
+
+
+
+
+<div id="myCarousel">
+	<br>
+
+	<br>
 	<img class="webbanner" src="{{ asset('images/coffee.jpg') }}" alt="Banner image">
-</div>		
+</div>	
 
 
+		
+
+
+	
 
 
 @endsection
