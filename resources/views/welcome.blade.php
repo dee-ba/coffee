@@ -11,13 +11,13 @@
 	</div>
 	<div class="carousel-inner">
 		<div class="carousel-item active">
-			<img class="bd-placeholder-img" width="100%" height="100%" src="{{ asset('images/nathan-dumlao-pMW4jzELQCw-unsplash.jpg') }}" alt="First slide">
+			<img class="bd-placeholder-img" width="100%" height="100%" src="{{ asset('images/demi-deherrera-L-sm1B4L1Ns-unsplash.jpg') }}" alt="First slide">
 		
 			<div class="container">
 				<div class="carousel-caption text-start">
-					<h1 id="stroked_text">Latte.</h1>
-					<p id="stroked_text">Try our new Latte, made the way it's meant to be.</p>
-					<p><a class="btn btn-lg btn-primary" href="{{ url('/hot_products') }}">Browse for more</a></p>
+					<h1 id="stroked_text">Iced Coffee.</h1>
+					<p id="stroked_text">Try some iced coffee like you never had before.</p>
+					<p><a class="btn btn-lg btn-primary" href="{{ url('/cold_products') }}">Browse for more</a></p>				
 				</div>
 			</div>
 		</div>
@@ -33,13 +33,13 @@
 			</div>
 		</div>
 		<div class="carousel-item">
-			<img class="bd-placeholder-img" width="100%" height="100%" src="{{ asset('images/demi-deherrera-L-sm1B4L1Ns-unsplash.jpg') }}" alt="Third slide">
+			<img class="bd-placeholder-img" width="100%" height="100%" src="{{ asset('images/nathan-dumlao-pMW4jzELQCw-unsplash.jpg') }}" alt="Third slide">
 
 			<div class="container">
 				<div class="carousel-caption text-end">
-					<h1 id="stroked_text">Iced Coffee.</h1>
-					<p id="stroked_text">Try some iced tea like you never had before.</p>
-					<p><a class="btn btn-lg btn-primary" href="{{ url('/cold_products') }}">Browse for more</a></p>
+					<h1 id="stroked_text">Latte.</h1>
+					<p id="stroked_text">Try our new Latte, made the way it's meant to be.</p>
+					<p><a class="btn btn-lg btn-primary" href="{{ url('/hot_products') }}">Browse for more</a></p>
 				</div>
 			</div>
 		</div>
