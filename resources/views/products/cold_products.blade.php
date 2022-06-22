@@ -38,7 +38,7 @@
 								<input type="hidden" value="{{ $prod->image }}"  name="image">
 								<input type="hidden" value="2" name="quantity">
 								<a href="customize/{{$prod->id}}" class="px-4 py-2 btn btn-primary rounded">Customize</a>
-								<button class="px-4 py-2 text-white bg-success rounded">Add To Cart</button>
+								<button class="px-1 py-1 text-white bg-success rounded">Add To Cart</button>
 							</form>
 							
 						</div>

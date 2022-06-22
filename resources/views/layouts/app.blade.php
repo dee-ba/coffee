@@ -126,7 +126,7 @@
 				</div>
 			</nav>
 			<div>
-				<img class="bd-placeholder-img" width="100%" height="100%" src="{{ asset('images/mike-kenneally-TD4DBagg2wE-unsplash.jpg') }}" alt="Banner image">
+				<img class="webbanner" src="{{ asset('images/diba.jpg') }}" alt="Banner image">
 			</div>		
 			<main class="py-4">
 				@yield('content')
@@ -136,15 +136,15 @@
 
 
 <!-- Footer -->
-<footer class="text-center text-white" style="background-color:#573429;">
+<footer class="text-center text-white p-3" style="background-color:#212529;">
 
-
+	<h3 class="btn btn-outline-light btn-floating m-1">Follow us</h3>
 	<!-- Grid container -->
 	<div class="container p-1">
 	  <!-- Section: Social media -->
 	  <section class="mb-4">
 		<!-- Facebook -->
-		<a class="btn btn-outline-light btn-floating m-1" href="{{('http://www.facebook.com') }}" role="button"
+		<a class="btn btn-outline-light btn-floating" href="{{('http://www.facebook.com') }}" role="button"
 		  ><i class="bi bi-facebook"></i
 		></a>
   
@@ -169,16 +169,15 @@
 		></a>
 		<!-- Linkedin -->
   
-	
 
 		
   <br><br>
  
   
 	<!-- Copyright -->
-	<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+	<div class="text-center p-3" style="background-color: #D48F1C ;">
 	  © 2022 Copyright <br>
-	  <a class="text-white" href="{{ url('/privacy') }}">Privacy Policy</a> <br>
+	  <a class="text-white"  href="{{ url('/privacy') }}">Privacy Policy</a> <br>
 	  <a class="text-white" href="{{ url('/terms') }}">Terms of Use</a>
 	</div> 
 	<!-- Copyright -->
@@ -186,6 +185,8 @@
 
   </footer>
   <!-- Footer -->
+
+  
 
 
 </body>

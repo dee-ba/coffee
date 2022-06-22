@@ -53,4 +53,13 @@
 		<span class="visually-hidden">Next</span>
 	</button>
 </div>
+
+
+<div>
+	<img class="webbanner" src="{{ asset('images/coffee.jpg') }}" alt="Banner image">
+</div>		
+
+
+
+
 @endsection
