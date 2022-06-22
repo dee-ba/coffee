@@ -23,7 +23,9 @@ class SearchController extends Controller
 
         
         
-} -->
+} 
+
+//-->
 
 
 // public function autocomplete(Request $request)
