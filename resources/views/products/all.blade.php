@@ -18,7 +18,6 @@
 			
 	  <table class="table table-hover table-responsive-sm border p-5 mb-5">
 		<tr style="background-color: #B58D7B; color:white">
-					<th scope="col" width="80px">ID</th>
 					<th scope="col" width="80px">Name</th>
 					<th scope="col" width="280px">Description</th>
 					<th scope="col" width="80px">Image</th>
@@ -28,10 +27,9 @@
 				
 				</tr>
 			
-				<tbody>
+			<tbody>
 				@foreach ($product as $prod)
 					<tr>						
-						<td>{{ $prod->id }}</td>
 						<td>{{ $prod->name }}</td>
 						<td>{{ $prod->description }}</td>
 						<td> <img class="card-img" style="background-color:red"
@@ -58,7 +56,7 @@
 
 						
 								
-				</tbody>
+			</tbody>
 				@endforeach
 			</table>
 	
