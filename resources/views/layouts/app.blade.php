@@ -21,8 +21,6 @@
 				<div class="container">
 					<a class="navbar-brand" href="{{ url('/') }}"><img src="/images/logo.jpg" alt="" width="60px" style="margin-right: 10px"><i class="bi bi-home"></i>Home</a>
 					
-					
-					
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
@@ -126,7 +124,7 @@
 				</div>
 			</nav>
 			<div>
-				<img class="webbanner" src="{{ asset('images/diba.jpg') }}" alt="Banner image">
+				<img class="img-responsive webbanner " src="{{ asset('images/diba.jpg') }}" alt="Banner image">
 			</div>		
 			<main class="py-4">
 				@yield('content')

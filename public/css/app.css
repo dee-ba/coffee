@@ -18125,20 +18125,22 @@ textarea.form-control-lg {
 }
 
 
-@media (max-width: 550px)
+@media (max-width: 600px)
 {
-  .webbanner {
-    height: 14em;
-    width: 30em;
-  }
+	.webbanner 
+	{
+		height: 14em;
+		width: 100%;
+	}
 }
 
-@media (min-width: 550px)
+@media (min-width: 600px)
 {
-  .webbanner {
-    height: 24em;
-    width: 95.9em;
-  }
+	.webbanner 
+	{
+		height: 24em;
+		width: 100%;
+	}
 }
 
 

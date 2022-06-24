@@ -67,20 +67,11 @@
 	</button>
 </div>
 
-
-
-
-
-
-
 <div class="container mt-2">
 	<div class="row">
 		<img class="webbanner" src="{{ asset('images/advert.jpg') }}" alt="Banner image">
 	</div>			
 </div>
-
-
-
 
 <div id="myCarousel">
 	<br>
