@@ -11,35 +11,48 @@
 	</div>
 	<div class="carousel-inner">
 		<div class="carousel-item active">
-			<img class="bd-placeholder-img" width="100%" height="100%" src="{{ asset('images/demi-deherrera-L-sm1B4L1Ns-unsplash.jpg') }}" alt="First slide">
+			<picture>
+			    <source media="(min-width: 1200px)" srcset="{{ asset('images/nathan-dumlao-pMW4jzELQCw-unsplash.jpg') }}">
+				<source media="(min-width: 600px)" srcset="{{ asset('images/demi-deherrera-L-sm1B4L1Ns-unsplash.jpg') }}">
+				<img class="bd-placeholder-img" width="100%" height="100%" src="{{ asset('images/tabitha-turner-F0Wd4djYvSA-unsplash.jpg') }}" alt="First slide">
+			</picture>			
 		
 			<div class="container">
 				<div class="carousel-caption text-start">
 					<h1 id="stroked_text">Iced Coffee.</h1>
 					<p id="stroked_text">Try some iced coffee like you never had before.</p>
-					<p><a class="btn btn-lg btn-primary" href="{{ url('/cold_products') }}">Browse for more</a></p>				
+					<p><a class="btn btn-lg btn-primary" href="{{ url('/cold_products') }}">See More</a></p>				
 				</div>
 			</div>
 		</div>
 		<div class="carousel-item">
-			<img class="bd-placeholder-img" width="100%" height="100%" src="{{ asset('images/farhad-ibrahimzade-DEovggNHhe0-unsplash.jpg') }}" alt="Second slide">
+			<picture>
+			    <source media="(min-width: 1200px)" srcset="{{ asset('images/alexander-mils-K_mM9BQW2tU-unsplash.jpg') }}">
+				<source media="(min-width: 600px)" srcset="{{ asset('images/farhad-ibrahimzade-DEovggNHhe0-unsplash.jpg') }}">
+				<img class="bd-placeholder-img" width="100%" height="100%" src="{{ asset('images/ieva-kisunaite-kRS7qyKfVhY-unsplash.jpg') }}" alt="Second slide">
+			</picture>		
 
+		
 			<div class="container">
 				<div class="carousel-caption">
 					<h1 id="stroked_text">Coffee ice Cream.</h1>
 					<p id="stroked_text">The perfect coffee, for those hot summer days.</p>
-					<p><a class="btn btn-lg btn-primary" href="{{ url('/cold_products') }}">Browse for more</a></p>
+					<p><a class="btn btn-lg btn-primary" href="{{ url('/cold_products') }}">See More</a></p>
 				</div>
 			</div>
 		</div>
 		<div class="carousel-item">
-			<img class="bd-placeholder-img" width="100%" height="100%" src="{{ asset('images/nathan-dumlao-pMW4jzELQCw-unsplash.jpg') }}" alt="Third slide">
+			<picture>
+			    <source media="(min-width: 1200px)" srcset="{{ asset('images/nathan-dumlao-pMW4jzELQCw-unsplash.jpg') }}">
+				<source media="(min-width: 600px)" srcset="{{ asset('images/fahmi-fakhrudin-nzyzAUsbV0M-unsplash.jpg') }}">
+				<img class="bd-placeholder-img" width="100%" height="100%" src="{{ asset('images/billy-kwok-vfiA7rRtjWo-unsplash.jpg') }}" alt="Third slide">
+			</picture>
 
 			<div class="container">
 				<div class="carousel-caption text-end">
 					<h1 id="stroked_text">Latte.</h1>
 					<p id="stroked_text">Try our new Latte, made the way it's meant to be.</p>
-					<p><a class="btn btn-lg btn-primary" href="{{ url('/hot_products') }}">Browse for more</a></p>
+					<p><a class="btn btn-lg btn-primary" href="{{ url('/hot_products') }}">See More</a></p>
 				</div>
 			</div>
 		</div>

@@ -36,6 +36,7 @@ class CartController extends Controller
 			'size' => $request->size,
             'price' => $request->price,
             'quantity' => $quantity,
+			'discount' => 0,
             'attributes' => array(
                 'image' => $request->image,
             )
@@ -80,7 +81,7 @@ class CartController extends Controller
     {
         \Cart::clear();
 
-        session()->flash('success', 'All Item Cart Clear Successfully !');
+        session()->flash('success', 'Cart Cleared Successfully !');
         return redirect()->route('cart.list');
     }
 	
@@ -108,7 +109,6 @@ class CartController extends Controller
 			{
 				$ord = new Order;
 				$ord->user_id = $request->session()->get('login_web_59ba36addc2b2f9401580f014c7f58ea4e30989d');
-				//$ord->order_item_id = $ord_item->id;
 				$ord->save();
 				
 				//return ($ord->id);
@@ -116,8 +116,7 @@ class CartController extends Controller
 				$run_already = true;
 			}
 			//return ($ord->id);
-			
-			//$ord_item = Order_Item::find($ord_item->id);
+
 			$ord_item->order_id = $ord->id;
 			$ord_item->save();				
 			
@@ -129,12 +128,14 @@ class CartController extends Controller
 	
     public function getDiscount(Request $request)
     {
-        if($request->discount == "123456789")
-		{
-			$discount = $request->discount;
-			session()->flash('success', 'Discount code applied Successfully !');
-			return redirect()->route('cart.list', compact('discount'));			
-		}
-	return redirect()->route('cart.list');
+		$discount_code = $request->discount_code;
+		\Cart::setDiscount($discount_code);
+		$data['discount'] = \Cart::getTotalDiscount();
+		
+        $cartItems = \Cart::getContent();	
+
+		//return $cartItems = \Cart::getContent();
+		
+		return view('cart', $data, compact('cartItems'));
     }	
 }
