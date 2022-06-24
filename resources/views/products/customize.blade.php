@@ -2,7 +2,7 @@
 @section ('title', 'Customize')
 @section ('content')
 
-<?php dump(session()->all()) ?>	
+<?php //dump(session()->all()) ?>	
 	
 <?php $cartItems = Cart::getContent() ?>	
 	
@@ -173,10 +173,6 @@
 									</div>
 								</div>	
 							@endif
-							
-							
-							
-
 						</div>
 						
 						<input type="hidden" value="{{ $prod->price }}" name="price">

@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {	
+
     public function cartList()
     {
         $cartItems = \Cart::getContent();
@@ -22,7 +23,9 @@ class CartController extends Controller
     {
 		$quantity = $request->quantity - 1;
 		$cartItems = \Cart::getContent();
-		$id = count($cartItems) + 1;
+		//$id = count($cartItems) + 1;
+		//return $this->countItemsCart();
+		$id = $this->countItemsCart();
 		
         \Cart::add([
             'id' => $id,
@@ -84,6 +87,26 @@ class CartController extends Controller
         session()->flash('success', 'Cart Cleared Successfully !');
         return redirect()->route('cart.list');
     }
+	
+    public function countItemsCart()
+    {
+		$cartItems = \Cart::getContent();
+		$counter = 0;
+
+		foreach ($cartItems as $cart)
+		{
+			if($counter < $cart->id)
+			{
+				$counter = $cart->id + 1;
+			}
+			else
+			{
+				$counter = $cart->id + 1;
+			}
+		}   
+
+		return $counter;
+    }	
 	
     public function store_order_item(Request $request)
     {

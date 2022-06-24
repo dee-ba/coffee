@@ -1,29 +1,20 @@
-<!DOCTYPE html>
+@extends ('layouts.app')
+@section ('title', 'Product Index')
+@section ('content')
 
-@extends('layouts.app')
+<div class="border p-5 mb-1">
+	<div class="border p-5 mb-1">
+		<div class="text-center text-white p-1" style="background-color:#573429;"> 
+			<h1>Order Items Index</h1>
+		</div> 
+		<br><br>
+					
+			<div class="pull-right mb-2">
+				<a class="btn btn-success" href="/order_items/create"> Create Order Item</a>
+			</div>					
 
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Order Item Index</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
-	</head>
-	<body>
-		@section('content')
-		<div class="container mt-2">
-			<div class="row">
-				<div class="col-lg-12 margin-tb">
-					<div class="pull-left">
-						<h2>Index Order Item</h2>
-					</div>
-					<div class="pull-right mb-2">
-						<a class="btn btn-success" href="/order_items/create"> Create Order Item</a>
-					</div>					
-				</div>
-			</div>
-
-			<table class="table table-bordered">
-				<tr>
+			<table class="table table-hover table-responsive-sm border p-5 mb-5">
+				<tr style="background-color: #B58D7B; color:white">
 					<th>id</th>
 					<th>order id</th>
 					<th>product id</th>

@@ -45,13 +45,13 @@ class ProductController extends Controller
     
 	public function hot_index()
     {
-		$data['product'] = Product::where('category','hot')->orderBy('id','asc')->paginate(5);
+		$data['product'] = Product::where('category','hot')->orderBy('id','asc')->paginate(6);
 		return view('products/hot_products', $data);
     }
 	
     public function cold_index()
     {
-		$data['product'] = Product::where('category','cold')->orderBy('id','asc')->paginate(5);
+		$data['product'] = Product::where('category','cold')->orderBy('id','asc')->paginate(6);
 		return view('products/cold_products', $data);
     }
 

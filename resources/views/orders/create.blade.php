@@ -38,28 +38,13 @@
 							<select name="user_id" id="user_id">
 								<option value="none" selected disabled hidden>Select an Option</option>
 								@foreach ($users as $usr)
-									<option value="{{ $usr->id }}">{{ $usr->id }} : {{ $usr->name }}</option>											
+									<option value="{{ $usr->id }}">{{ $usr->id }} : {{ $usr->first_name }} {{ $usr->last_name }}</option>											
 								@endforeach
 							</select>
 							@error('user_id')
 							<div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
 							@enderror								
 						</div>
-					</div>
-					<div class="col-xs-12 col-sm-12 col-md-12">
-						<div class="form-group">
-							<strong>Order Item ID:</strong><br>
-							<select name="order_item_id" id="order_item_id">
-								<option value="none" selected disabled hidden>Select an Option</option>
-								@foreach ($order_items as $ord_item)
-									<option value="{{ $ord_item->id }}">{{ $ord_item->id }}</option>											
-								@endforeach
-							</select>
-							@error('order_item_id')
-							<div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-							@enderror							
-						</div>						
-						<button type="submit" class="btn btn-primary ml-3">Submit</button>
 					</div>
 				</div>			
 			</form>

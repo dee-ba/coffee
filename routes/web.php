@@ -43,14 +43,6 @@ Route::post('', [CartController::class, 'store_order_item']);
 Route::post('discount', [CartController::class, 'getDiscount'])->name('cart.discount');
 
 
-//Shopping Cart
-Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
-Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
-Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.update');
-Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
-Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
-
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -72,7 +64,8 @@ Route::get('/search/', [ProductController::class, 'search']);
 
 
 
-Route::group(['middleware' => ['auth' , 'isAdmin']], function () {
+Route::group(['middleware' => ['auth' , 'isAdmin']], function () 
+{
 	 
 	//User Routes
 	Route::get('/users' , [UserController::class, 'index']);
@@ -92,7 +85,22 @@ Route::group(['middleware' => ['auth' , 'isAdmin']], function () {
 	Route::delete('/products/{prod}', [ProductController::class, 'destroy']);   
 
 
+	//Order_Item Controller Routes
+	Route::get('/order_items', [Order_ItemController::class, 'index']);
+	Route::get('/order_items/create', [Order_ItemController::class, 'create']);
+	Route::get('/order_items/{ord_item}/edit', [Order_ItemController::class, 'edit']);
+	Route::match(['put','patch'], '/order_items/{ord_item}/edit', [Order_ItemController::class, 'update']);
+	Route::post('/order_items', [Order_ItemController::class, 'store']);
+	Route::delete('/order_items/{ord_item}', [Order_ItemController::class, 'destroy']);
 
+
+	//Order Controller Routes
+	Route::get('/orders', [OrderController::class, 'index']);
+	Route::get('/orders/create', [OrderController::class, 'create']);
+	Route::get('/orders/{ord}/edit', [OrderController::class, 'edit']);
+	Route::match(['put','patch'], '/orders/{ord}/edit', [OrderController::class, 'update']);
+	Route::post('/orders', [OrderController::class, 'store']);
+	Route::delete('/orders/{ord}', [OrderController::class, 'destroy']);
 
 
 });

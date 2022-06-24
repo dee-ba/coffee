@@ -63,9 +63,8 @@
 						<ul class="navbar-nav ms-auto">
 							<div class="input-group rounded search_bar">
 								<form action="/search" method="GET">
-									<input type="text" name="search" required/>
-									<button class="search_button btn btn-primary ml-3"> <i class="bi bi-search"></i>
-										</button>
+									<input type="text" name="search" placeholder="Search for products here" required/>
+									<button class="search_button btn btn-primary ml-1"> <i class="bi bi-search"></i></button>
 								</form>
 								
 							</div>
@@ -103,7 +102,7 @@
 							@else
 								<li class="nav-item dropdown">
 									<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-										<i class="bi bi-person-circle"></i> {{ Auth::user()->name }}
+										<i class="bi bi-person-circle"></i> {{ Auth::user()->first_name }} {{ Auth::user()->last_name}}
 									</a>
 
 									<div class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="navbarDropdown">									

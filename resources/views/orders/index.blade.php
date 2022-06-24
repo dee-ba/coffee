@@ -1,32 +1,22 @@
-<!DOCTYPE html>
+@extends ('layouts.app')
+@section ('title', 'Product Index')
+@section ('content')
 
-@extends('layouts.app')
+<div class="border p-5 mb-1">
+	<div class="border p-5 mb-1">
+		<div class="text-center text-white p-1" style="background-color:#573429;"> 
+			<h1>Order Index</h1>
+		</div> 
+		<br><br>
+					
+			<div class="pull-right mb-2">
+				<a class="btn btn-success" href="/orders/create"> Create Order</a>
+			</div>					
 
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Order Index</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
-	</head>
-	<body>
-		@section('content')
-		<div class="container mt-2">
-			<div class="row">
-				<div class="col-lg-12 margin-tb">
-					<div class="pull-left">
-						<h2>Index Order</h2>
-					</div>
-					<div class="pull-right mb-2">
-						<a class="btn btn-success" href="/orders/create"> Create Order</a>
-					</div>					
-				</div>
-			</div>
-
-			<table class="table table-bordered">
-				<tr>
+			<table class="table table-hover table-responsive-sm border p-5 mb-5">
+				<tr style="background-color: #B58D7B; color:white">
 					<th>ID</th>
 					<th>User ID</th>
-					<th>Order Item ID</th>
 					<th>Created At</th>
 					<th>Updated At</th>					
 					<th width="280px">Action</th>
@@ -36,7 +26,6 @@
 					<tr>						
 						<td>{{ $ord->id }}</td>
 						<td>{{ $ord->user_id }}</td>
-						<td>{{ $ord->order_items_id }}</td>
 						<td>{{ $ord->created_at }}</td>
 						<td>{{ $ord->updated_at }}</td>						
 						<td>
@@ -59,5 +48,5 @@
 			</nav>			
 		</div>
 		@endsection		
-	</body>
-</html>
+	</div>
+</div>

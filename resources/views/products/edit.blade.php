@@ -73,20 +73,17 @@
 				</div>			
 				
 				
-				<div class="col-xs-12 col-sm-12 col-md-12">
-				<div class="form-group">
-					<strong>Category:</strong><br>
-					<select name="category" id="category">
-						<option value="{{ $prod->category }}">{{ $prod->category }}</option>
-						<option value="Hot">Hot</option>
-						<option value="Cold">Cold</option>						
-					</select>
-					@error('category')
-					<div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
-					@enderror	
-											
-				</div>
-				<br>
+				<div class="col-xs-12 col-sm-12 col-md-12">	
+					<div class="form-floating">
+						<select class="form-select form-select-lg mb-3" name="category" id="category">
+							<option value="hot">Hot</option>
+							<option value="cold">Cold</option>														
+						</select>
+						<label for="size" class="h5">Select a Category</label>	
+						@error('category')
+						<div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+						@enderror					
+					</div>				
 				</div>
 				
 				
