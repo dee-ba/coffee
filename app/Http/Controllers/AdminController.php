@@ -17,7 +17,7 @@ class AdminController extends Controller
       
         $admins = Admin::paginate(15);
         // $users = User::all();       without pages
-        return view('admins/index', ['admins' => $admins]);
+        return view('/index', ['admins' => $admins]);
     }
 
     /**

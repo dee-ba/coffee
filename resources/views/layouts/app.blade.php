@@ -41,7 +41,7 @@
 							<ul class="navbar-nav">
 								<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-									<i class="bi bi-wrench-adjustable-circle"></i> Test Pages
+									<i class="bi bi-wrench-adjustable-circle"></i> CRUD Pages
 								</a>
 									<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
 										<a class="dropdown-item" href="{{ url('/products') }}">Products</a>	
